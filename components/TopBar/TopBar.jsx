@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from './TopBar.module.css';
 import logoSrc from './img/logo.png';
 
@@ -55,10 +56,10 @@ const TopBarLinks = props => {
         <nav className={styles.links}>
             <ol>
                 <li>
-                    <a href='#'>about</a>
+                    <Link href='/about'>about</Link>
                 </li>
                 <li>
-                    <a href='#'>store</a>
+                    <Link href='/shop'>shop</Link>
                 </li>
             </ol>
         </nav>

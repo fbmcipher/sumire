@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 
-import Track from '../classes/Track.js';
+import Track from '../../classes/Track.js';
 import Head from 'next/head'
-import Exhibit from '../components/Exhibit/Exhibit.jsx';
-import AudioTrackPlaylist from '../components/AudioTrackPlaylist/AudioTrackPlaylist.jsx';
-import styles from '../styles/Home.module.css'
+import Exhibit from '../../components/Exhibit/Exhibit.jsx';
+import AudioTrackPlaylist from '../../components/AudioTrackPlaylist/AudioTrackPlaylist.jsx';
+import styles from '../../styles/Home.module.css'
 
 export default function Home() {
   let tracks = [

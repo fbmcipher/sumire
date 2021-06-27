@@ -4,8 +4,7 @@ import { css } from '@emotion/react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import TopBar from '../components/TopBar/TopBar.jsx';
+import styles from '../../styles/Home.module.css'
 
 export default function Home() {
   return (

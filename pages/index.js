@@ -47,7 +47,7 @@ export default function Home() {
       <main className={styles.main}>
         <Members members={members} />
         <p>This is a page that overrides the Layout</p>
-        <Link href="/haidernism">TO Haidernism</Link>
+        <Link href="/@haidersamsara/haidernism">TO Haidernism</Link>
       </main>
 
       <footer className={styles.footer}>
