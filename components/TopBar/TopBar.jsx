@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import Image from 'next/image'
-import logoSrc from './logo.png';
+import logoSrc from './img/logo.png';
 
 const TopBar = props => {
     /**
@@ -54,7 +54,10 @@ const TopBarLogo = props => {
 
     return (
         <div className="top-bar__logo">
-            <Image src={logoSrc} alt="sumire logo" width={144} height={144} />
+            <div className="top-bar__logomark">
+                <Image src={logoSrc} alt="sumire logo" width={144} height={144} />
+            </div>
+            <div className="top-bar__typemark">made by sumire</div>
         </div>
     )
 }
