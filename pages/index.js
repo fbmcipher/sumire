@@ -5,7 +5,35 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import TopBar from '../components/TopBar/TopBar.jsx';
+import Members from '../components/Members/Members.jsx';
+
+const members = [
+  {
+    name: 'faiz',
+    imageSrc: 'https://via.placeholder.com/150x150'
+  },
+  {
+    name: 'HAIDER SAMSARA',
+    imageSrc: 'https://assets.cosy.land/images/2021/02/HD26.jpg',
+    username: 'haidersamsara'
+  },
+  {
+    name: 'Caracara',
+    imageSrc: 'https://via.placeholder.com/150x150'
+  },
+  {
+    name: 'pier_ogii',
+    imageSrc: 'https://via.placeholder.com/150x150'
+  },
+  {
+    name: 'pjd.',
+    imageSrc: 'https://via.placeholder.com/150x150'
+  },
+  {
+    name: 'HAM',
+    imageSrc: 'https://via.placeholder.com/150x150'
+  }
+]
 
 export default function Home() {
   return (
@@ -17,6 +45,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <Members members={members} />
         <p>This is a page that overrides the Layout</p>
         <Link href="/haidernism">TO Haidernism</Link>
       </main>
