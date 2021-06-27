@@ -16,7 +16,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-
+        <p>This is a page that overrides the Layout</p>
       </main>
 
       <footer className={styles.footer}>

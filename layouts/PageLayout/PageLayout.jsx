@@ -1,6 +1,6 @@
 /* This component determines a common layout for all pages. */
-import styles from './Layout.module.css';
-import TopBar from '../TopBar/TopBar.jsx';
+import styles from './PageLayout.module.css';
+import TopBar from '../../components/TopBar/TopBar.jsx';
 
 export default ({children}) => {
     return (
