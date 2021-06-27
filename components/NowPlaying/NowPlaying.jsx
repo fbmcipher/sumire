@@ -7,6 +7,7 @@ const NowPlaying = ({playing}) => {
 
     const seekBar = useRef();
     const [ didSetAudioTagListener, setDidSetAudioTagListener ] = useState(false);
+    const [ didSetSeekBarListener, setDidSetSeekBarListener ] = useState(false);
 
     return (
         <PlaybackContext.Consumer>
@@ -18,14 +19,27 @@ const NowPlaying = ({playing}) => {
 
                 if(audioTag.current && !didSetAudioTagListener){
                     audioTag.current.addEventListener('timeupdate', (e)=>{
+                        /* keeps the slider synched with current playback completion */
                         /* playback percentage */
                         let perc = (audioTag.current.currentTime / audioTag.current.duration);
                         /* set seekBar progress attribute */
-                        seekBar.current.setAttribute('value', perc);
+                        seekBar.current.value = perc * 100;
                     });
 
                     /* ensure we only set this listener once */
                     setDidSetAudioTagListener(true);
+                }
+
+                if(seekBar.current && !didSetSeekBarListener){
+                    seekBar.current.addEventListener('change', (e)=>{
+                        /* calculate the time to seek to from the percentage */
+                        let newPerc = e.target.value / 100;
+                        let newTime = audioTag.current.duration * newPerc;
+                        audioTag.current.currentTime = newTime;
+                    })
+
+                    /* ensure we only set this listener once */
+                    setDidSetSeekBarListener(true);
                 }
 
                 return (
@@ -35,7 +49,7 @@ const NowPlaying = ({playing}) => {
                             <Artists artists={curTrack.artists} />
                         </div>
                         <div className={styles.trackSeek}>
-                            <progress ref={seekBar}></progress>
+                            <input min="0" max="100" type="range" ref={seekBar} />
                         </div>
                         <div className={styles.trackControls}>
 
