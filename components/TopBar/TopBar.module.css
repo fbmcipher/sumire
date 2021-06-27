@@ -1,5 +1,10 @@
 .topbar {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 92.5%;
+    margin: 0 auto;
+    padding: 24px 0;
 }
 
 /* logo styles */
@@ -20,13 +25,22 @@
 }
 
 @media (min-width: 1440px){
+    .logomark {
+        width: 96px;
+        height: 96px
+    }
+
+    .typemark {
+        font-size: 36px;
+    }
+    
     .logoContainer {
         flex-direction: row;
         align-items: center;
     }
 
     .logomark {
-        margin: 0 8px 0 0;
+        margin: 0 24px 0 0;
     }
 }
 

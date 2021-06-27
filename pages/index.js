@@ -15,8 +15,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" /> {/* TODO change this */}
       </Head>
 
-      <TopBar />
-
       <main className={styles.main}>
 
       </main>

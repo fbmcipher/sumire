@@ -14,7 +14,7 @@ const TopBar = props => {
     */
 
     return (
-        <header className="top-bar">
+        <header className={styles.topbar}>
             <div className="top-bar__section-left">
                 <TopBarLogo />
                 <TopBarLinks />
