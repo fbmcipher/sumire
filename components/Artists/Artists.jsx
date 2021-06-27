@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link'
 
 const Artists = ({artists}) => {
 
@@ -8,7 +9,7 @@ const Artists = ({artists}) => {
     let components = artists.map(artist => {
         /* try to link the artist, if we have one */
         if(artist.href){
-            return <a href={artist.href}><span>{artist.name}</span></a>
+            return <Link href={artist.href}><span>{artist.name}</span></Link>
         } else {
             return <span>{artist.name}</span>
         }

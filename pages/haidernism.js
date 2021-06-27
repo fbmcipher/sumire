@@ -13,7 +13,7 @@ export default function Home() {
         title: 'PRETENTIOUS',
         explicit: true,
         artists: [
-            { name: 'HAIDER SAMSARA', username: 'haidersamsara', href: '/haidersamsara' }
+            { name: 'HAIDER SAMSARA', username: 'haidersamsara', href: '/@haidersamsara' }
         ],
         src: 'https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track1.mp3'
       },
@@ -21,7 +21,7 @@ export default function Home() {
         title: 'PRESSURE',
         explicit: true,
         artists: [
-            { name: 'HAIDER SAMSARA', username: 'haidersamsara', href: '/haidersamsara' }
+            { name: 'HAIDER SAMSARA', username: 'haidersamsara', href: '/@haidersamsara' }
         ],
         src: 'https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track2.mp3'
       },
@@ -29,8 +29,8 @@ export default function Home() {
         title: 'THRU THE NITE',
         explicit: true,
         artists: [
-            { name: 'HAIDER SAMSARA', username: 'haidersamsara', href: '/haidersamsara' },
-            { name: 'Caracara', username: 'caracara', href: '/caracara' }
+            { name: 'HAIDER SAMSARA', username: 'haidersamsara', href: '/@haidersamsara' },
+            { name: 'Caracara', username: 'caracara', href: '/@caracara' }
         ],
         src: 'https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track3.mp3'
       },
@@ -38,7 +38,7 @@ export default function Home() {
         title: 'THOUGHT LOOPS',
         explicit: true,
         artists: [
-            { name: 'HAIDER SAMSARA', username: 'haidersamsara', href: '/haidersamsara' }
+            { name: 'HAIDER SAMSARA', username: 'haidersamsara', href: '/@haidersamsara' }
         ],
         src: 'https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track4.mp3'
       },
@@ -46,7 +46,7 @@ export default function Home() {
         title: 'QUICKSAND',
         explicit: true,
         artists: [
-            { name: 'HAIDER SAMSARA', username: 'haidersamsara', href: '/haidersamsara' }
+            { name: 'HAIDER SAMSARA', username: 'haidersamsara', href: '/@haidersamsara' }
         ],
         src: 'https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track5.mp3'
       },
@@ -54,7 +54,7 @@ export default function Home() {
         title: 'IN MY EYEZ',
         explicit: true,
         artists: [
-            { name: 'HAIDER SAMSARA', username: 'haidersamsara', href: '/haidersamsara' },
+            { name: 'HAIDER SAMSARA', username: 'haidersamsara', href: '/@haidersamsara' },
             { name: 'Frank Lafunk' }
         ],
         src: 'https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track6.mp3'
@@ -63,15 +63,15 @@ export default function Home() {
         title: 'PAKI',
         explicit: true,
         artists: [
-            { name: 'HAIDER SAMSARA', username: 'haidersamsara', href: '/haidersamsara' },
+            { name: 'HAIDER SAMSARA', username: 'haidersamsara', href: '/@haidersamsara' },
         ],
         src: 'https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track7.mp3'
       },
       {
         title: 'PENITENT',
         artists: [
-            { name: 'HAIDER SAMSARA', username: 'haidersamsara', href: '/haidersamsara' },
-            { name: 'Sylvia the House', username: 'sylviathehouse' }
+            { name: 'HAIDER SAMSARA', username: 'haidersamsara', href: '/@haidersamsara' },
+            { name: 'Sylvia the House', username: 'sylviathehouse', href: '/@sylviathehouse' }
         ],
         explicit: true,
         src: 'https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track8.mp3'
