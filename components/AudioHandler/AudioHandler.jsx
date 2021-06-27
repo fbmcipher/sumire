@@ -67,7 +67,8 @@ const AudioHandler = props => {
 
     return (
         <PlaybackContext.Provider value={{
-            queue, setQueue, playingIdx, setPlayingIdx, curTrack, setCurTrack
+            queue, setQueue, playingIdx, setPlayingIdx, curTrack, setCurTrack,
+            audioTag
         }}>
             <NowPlaying />
             <audio ref={audioTag}></audio>
