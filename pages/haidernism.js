@@ -3,9 +3,88 @@ import { css } from '@emotion/react'
 
 import Head from 'next/head'
 import Exhibit from '../components/Exhibit/Exhibit.jsx';
+import AudioTrackPlaylist from '../components/AudioTrackPlaylist/AudioTrackPlaylist.jsx';
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  let tracks = [
+      {
+        title: 'PRETENTIOUS',
+        explicit: true,
+        artists: [
+            { name: 'HAIDER SAMSARA', username: 'haidersamsara' }
+        ],
+        href: 'https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track1.mp3'
+      },
+      {
+        title: 'PRESSURE',
+        explicit: true,
+        artists: [
+            { name: 'HAIDER SAMSARA', username: 'haidersamsara' }
+        ],
+        href: 'https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track2.mp3'
+      },
+      {
+        title: 'THRU THE NITE',
+        explicit: true,
+        artists: [
+            { name: 'HAIDER SAMSARA', username: 'haidersamsara' },
+            { name: 'Caracara', username: 'caracara' }
+        ],
+        href: 'https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track3.mp3'
+      },
+      {
+        title: 'THOUGHT LOOPS',
+        explicit: true,
+        artists: [
+            { name: 'HAIDER SAMSARA', username: 'haidersamsara' }
+        ],
+        href: 'https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track4.mp3'
+      },
+      {
+        title: 'QUICKSAND',
+        explicit: true,
+        artists: [
+            { name: 'HAIDER SAMSARA', username: 'haidersamsara' }
+        ],
+        href: 'https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track5.mp3'
+      },
+      {
+        title: 'IN MY EYEZ',
+        explicit: true,
+        artists: [
+            { name: 'HAIDER SAMSARA', username: 'haidersamsara' },
+            { name: 'Frank Lafunk' }
+        ],
+        href: 'https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track6.mp3'
+      },
+      {
+        title: 'PAKI',
+        explicit: true,
+        artists: [
+            { name: 'HAIDER SAMSARA', username: 'haidersamsara' },
+        ],
+        href: 'https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track7.mp3'
+      },
+      {
+        title: 'PENITENT',
+        artists: [
+            { name: 'HAIDER SAMSARA', username: 'haidersamsara' },
+            { name: 'Sylvia the House', username: 'sylviathehouse' }
+        ],
+        explicit: true,
+        href: 'https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track8.mp3'
+      },
+      {
+        title: 'PHENOMENAL',
+        artists: [
+            { name: 'HAIDER SAMSARA', username: 'haidersamsara' }
+        ],
+        explicit: false,
+        href: 'https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track9.mp3'
+      }
+    ]
+
   return (
     <div className={styles.container}>
       <Head>
@@ -16,6 +95,7 @@ export default function Home() {
 
       <Exhibit>
           <p>this is The Exhibition</p>
+          <AudioTrackPlaylist tracks={tracks} />
           <img style={{height: '100%', width: '300%'}} src="https://via.placeholder.com/3840x2160/09f/fff" />
       </Exhibit>
 

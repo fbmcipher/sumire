@@ -2,6 +2,7 @@
 import { css } from '@emotion/react'
 
 import Head from 'next/head'
+import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import TopBar from '../components/TopBar/TopBar.jsx';
@@ -17,6 +18,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <p>This is a page that overrides the Layout</p>
+        <Link href="/haidernism">TO Haidernism</Link>
       </main>
 
       <footer className={styles.footer}>
