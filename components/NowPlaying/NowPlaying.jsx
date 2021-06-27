@@ -8,6 +8,19 @@ const NowPlaying = ({playing}) => {
     const seekBar = useRef();
     const [ didSetAudioTagListener, setDidSetAudioTagListener ] = useState(false);
     const [ didSetSeekBarListener, setDidSetSeekBarListener ] = useState(false);
+    const [ isSeeking, _setIsSeeking ] = useState(false);
+
+    /* We can't access state inside an event listener in React in functional components.
+       So we'll need to create a ref to represent the state, and a custom setter function that
+       keeps the value of the actual state + ref state synchronised.
+       Thanks to https://medium.com/geographit/accessing-react-state-in-event-listeners-with-usestate-and-useref-hooks-8cceee73c559 for demystifying yet another of React's... *charming* idiosyncracies.
+    */
+
+    const isSeekingRef = useRef(isSeeking);
+    const setIsSeeking = data => {
+        isSeekingRef.current = data;
+        _setIsSeeking(data);
+    }
 
     return (
         <PlaybackContext.Consumer>
@@ -21,6 +34,12 @@ const NowPlaying = ({playing}) => {
                     audioTag.current.addEventListener('timeupdate', (e)=>{
                         /* keeps the slider synched with current playback completion */
                         /* playback percentage */
+                        
+                        /* don't update the range slider if user is seeking. this will
+                        cause the range input to flicker between the value the user is
+                        trying to input vs. the one we are updating */
+                        if(isSeekingRef.current) return false;
+
                         let perc = (audioTag.current.currentTime / audioTag.current.duration);
                         /* set seekBar progress attribute */
                         seekBar.current.value = perc * 100;
@@ -38,6 +57,17 @@ const NowPlaying = ({playing}) => {
                         audioTag.current.currentTime = newTime;
                     })
 
+                    seekBar.current.addEventListener('mousedown', (e)=>{
+                        /* when seekbar is receiving mouse/touch input, set isSeeking
+                            so timeupdate handler stops updating the input while
+                            the user is trying to interact with it. */ 
+                        setIsSeeking(true);
+                    })
+
+                    seekBar.current.addEventListener('mouseup', (e)=>{
+                        setIsSeeking(false);
+                    })
+
                     /* ensure we only set this listener once */
                     setDidSetSeekBarListener(true);
                 }
@@ -49,7 +79,7 @@ const NowPlaying = ({playing}) => {
                             <Artists artists={curTrack.artists} />
                         </div>
                         <div className={styles.trackSeek}>
-                            <input min="0" max="100" type="range" ref={seekBar} />
+                            <input min="0" max="100" value="0" type="range" ref={seekBar} />
                         </div>
                         <div className={styles.trackControls}>
 
