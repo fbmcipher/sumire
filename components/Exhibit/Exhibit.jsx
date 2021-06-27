@@ -17,6 +17,7 @@ export default function Exhibit({exhibit, children}){
            this works surprisingly well. it even supports inertial scrolling and all that jazz
            for people with nice trackpads!   
         */
+        console.log(e.deltaY);
         exhibitContainerRef.current.scrollBy(e.deltaY, 0);
     }
 

@@ -1,22 +1,32 @@
 /* Enumerates an array of AudioTracks and creates a tracklist that the user can navigate */
 
 import styles from './AudioTrackPlaylist.module.css';
+import PlaybackContext from '../../contexts/PlaybackContext.jsx';
 
 const AudioTrackPlaylist = ({tracks}) => {
     
     return (
-        <div className={styles.playlist}>
-            <ol>
-                { tracks.map((track, index) => <Track track={track} number={index + 1} />) }
-            </ol>
-        </div>
+        <PlaybackContext.Consumer>
+            {context => {
+                return (
+                    <div className={styles.playlist}>
+                        <ol>
+                            { tracks.map((track, index) => <Track onClick={()=>{
+                                let [ currentlyPlaying, setCurrentlyPlaying ] = context;
+                                setCurrentlyPlaying({playing: true, track})
+                            }} track={track} number={index + 1} />) }
+                        </ol>
+                    </div>
+                )
+            }}
+        </PlaybackContext.Consumer>
     )
 
 }
 
-const Track = ({track, number}) => {
+const Track = ({track, number, onClick}) => {
     return (
-        <li className={styles.track}>
+        <li onClick={onClick} className={styles.track}>
             <div className={styles.trackTitle}>
                 <div className={styles.trackNumber}>{number}</div>
                 <div className={styles.trackTitle}>{track.title}</div>
