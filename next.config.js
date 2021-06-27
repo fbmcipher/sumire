@@ -1,4 +1,4 @@
 module.exports = {
   reactStrictMode: true,
-  optimizeImagesInDev: true
+  optimizeImagesInDev: true,
 };

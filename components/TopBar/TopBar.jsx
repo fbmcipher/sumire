@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import Image from 'next/image'
+import styles from './TopBar.module.css';
 import logoSrc from './img/logo.png';
 
 const TopBar = props => {
@@ -19,7 +20,7 @@ const TopBar = props => {
             </div>
 
             <div className="top-bar__section-right">
-                <div class="top-bar__social-links">
+                <div className="top-bar__social-links">
                     <SocialLink name="instagram" href="javascript:alert('stubbed')" />
                     <SocialLink name="twitter" href="javascript:alert('stubbed')" />
                     <SocialLink name="tiktok" href="javascript:alert('stubbed')" />
@@ -54,7 +55,7 @@ const TopBarLogo = props => {
             <div className="top-bar__logomark">
                 <Image src={logoSrc} alt="sumire logo" width={144} height={144} />
             </div>
-            <div className="top-bar__typemark">made by sumire</div>
+            <div className={styles.typemark}>made by sumire</div>
         </div>
     )
 }
