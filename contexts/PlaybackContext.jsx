@@ -1,4 +1,4 @@
 import { createContext } from 'react';
 
-const PlaybackContext = createContext({playing: false});
+const PlaybackContext = createContext([]);
 export default PlaybackContext;
