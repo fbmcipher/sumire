@@ -9,42 +9,39 @@ const TopBar = props => {
      * - left, containing logo, typemark and linksto navigate, and
      * - right, containing social links
      * the structure of TopBarSectionLeft and TopBarSectionRight change
-     * based on screen width, but that's a story for those components :p
+     * (see CSS)
     */
 
     return (
         <header className="top-bar">
-            <TopBarSectionLeft />
-            <TopBarSectionRight />
+            <div className="top-bar__section-left">
+                <TopBarLogo />
+            </div>
+
+            <div className="top-bar__section-right">
+                <div class="top-bar__social-links">
+                    <SocialLink name="instagram" href="javascript:alert('stubbed')" />
+                    <SocialLink name="twitter" href="javascript:alert('stubbed')" />
+                    <SocialLink name="tiktok" href="javascript:alert('stubbed')" />
+                </div>
+            </div>
         </header>
     )
 }
 
-const TopBarSectionLeft = props => {
+const SocialLink = ({name, href})=> {
     /**
-     * Left part of the Top Bar.
-     * Contains logo, typemark, and links.
-     * Changes based on screen width. In smallest form, logo, typemark and navigation links are all vertical-stacked.
-     * In medium form, logo and typemark are v-stacked but navigation links are separated horizontally.
-     * In large form, logo, typemark and navigation links are h-stacked
+     * Represents a social link.
+     * @property {string} name - social network name (i.e. facebook, instagram, snapchat...)
+     * @property {string} href - where to link to
      */
 
+    const socialLinkSrc = require(`./img/${name}.svg`);
     return (
-        <div className="top-bar__section-left">
-            <TopBarLogo />
-        </div>
-
+        <a href={href} aria-label={name}>
+            <Image src={socialLinkSrc} focusable="false" width="24" height="24" />
+        </a>
     )
-}
-
-const TopBarSectionRight = props => {
-    /**
-     * Right part of the Top Bar. Contains social links.
-     */
-
-    return (<div>
-        <h1>foo</h1>
-    </div>)
 }
 
 const TopBarLogo = props => {
