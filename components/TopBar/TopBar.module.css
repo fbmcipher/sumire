@@ -1,4 +1,51 @@
+.topbar {
+    display: flex;
+}
+
+/* logo styles */
+
+.logoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .typemark {
     font: 700 48px wavehaus;
     color: hsl(323deg 100% 72%);
+}
+
+.logomark {
+    margin: 0 0 8px 0;
+}
+
+@media (min-width: 1440px){
+    .logoContainer {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .logomark {
+        margin: 0 8px 0 0;
+    }
+}
+
+/* top bar links */
+
+nav.links ol {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav.links ol li {
+    display: inline-block;
+    margin-right: 16px;
+    font: 600 24px wavehaus;
+    color: #FF90D3;
+    border-bottom: 2px solid #ff90d373;
+    transition: 0.1s ease-out;
+}
+
+nav.links ol li:hover {
+    border-bottom: 2px solid #ff90d3;
 }

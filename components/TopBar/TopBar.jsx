@@ -17,6 +17,7 @@ const TopBar = props => {
         <header className="top-bar">
             <div className="top-bar__section-left">
                 <TopBarLogo />
+                <TopBarLinks />
             </div>
 
             <div className="top-bar__section-right">
@@ -45,14 +46,33 @@ const SocialLink = ({name, href})=> {
     )
 }
 
+const TopBarLinks = props => {
+    /**
+     * This component renders the links in the top bar — "about" & "store"
+     */
+
+    return (
+        <nav className={styles.links}>
+            <ol>
+                <li>
+                    <a href='#'>about</a>
+                </li>
+                <li>
+                    <a href='#'>store</a>
+                </li>
+            </ol>
+        </nav>
+    )
+}
+
 const TopBarLogo = props => {
     /**
      * This component renders the Sumire logo and the "made by sumire" text.
      */
 
     return (
-        <div className="top-bar__logo">
-            <div className="top-bar__logomark">
+        <div className={styles.logoContainer}>
+            <div className={styles.logomark}>
                 <Image src={logoSrc} alt="sumire logo" width={144} height={144} />
             </div>
             <div className={styles.typemark}>made by sumire</div>
