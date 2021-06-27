@@ -2,29 +2,39 @@
 
 import styles from './AudioTrackPlaylist.module.css';
 import PlaybackContext from '../../contexts/PlaybackContext.jsx';
+import { useEffect, useContext } from 'react';
 
 const AudioTrackPlaylist = ({tracks}) => {
-    
-    return (
-        <PlaybackContext.Consumer>
-            {context => {
-                return (
-                    <div className={styles.playlist}>
-                        <ol>
-                            { tracks.map((track, index) => <Track onClick={()=>{
-                                let [ currentlyPlaying, setCurrentlyPlaying ] = context;
-                                setCurrentlyPlaying({playing: true, track})
-                            }} track={track} number={index + 1} />) }
-                        </ol>
-                    </div>
-                )
-            }}
-        </PlaybackContext.Consumer>
-    )
+    let { player } = useContext(PlaybackContext);
+    return <div className={styles.playlist}>
+        <ol>
+            { tracks.map((track, index) => {
+
+                return <Track
+                    onClick={()=>{
+                        let result = player.playTrack(track);
+                        console.log(player, result);
+                    }}
+                    tracks={tracks}
+                    track={track}
+                    number={index + 1} />
+
+            }) }
+        </ol>
+    </div>
 
 }
 
-const Track = ({track, number, onClick}) => {
+const Track = ({track, number, tracks}) => {
+    const { setQueue, setPlayingIdx } = useContext(PlaybackContext);
+
+    const onClick = (e)=>{
+        /* If this track is already playing, pause playback.
+           If this track is not already playing, change playback to this track. */
+        setQueue(tracks);
+        setPlayingIdx(tracks.indexOf(track))
+    }
+
     return (
         <li onClick={onClick} className={styles.track}>
             <div className={styles.trackTitle}>
