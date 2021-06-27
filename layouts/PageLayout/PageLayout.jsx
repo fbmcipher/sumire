@@ -43,11 +43,22 @@ export default ({children}) => {
         bgmPlayer.current.play();
     }
 
+    /* i.e. onChangeTrack */
     useEffect(()=>{
-        if(currentlyPlaying.track){
-            console.log(currentlyPlaying.track.src);
-            playAudioFile(currentlyPlaying.track.src);
+        if(!currentlyPlaying.track) return false;
+        
+        let { track } = currentlyPlaying;
+
+        /* play new audio */
+        playAudioFile(track.src);
+        
+        /* provide metadata to the browser */
+        if ('mediaSession' in navigator) {
+            navigator.mediaSession.metadata = new MediaMetadata({
+                title: track.title
+            })
         }
+
     }, [currentlyPlaying]);
 
     return (

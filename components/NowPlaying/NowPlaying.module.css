@@ -1,0 +1,11 @@
+.nowPlaying {
+    position: fixed;
+    display: block;
+    left: 0;
+    bottom: 0;
+    background: white;
+    z-index: 100000;
+    margin: 24px;
+    border-radius: 8px;
+    border: 2px solid rgba(0,0,0,.3);
+}
