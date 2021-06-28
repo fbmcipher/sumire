@@ -17,6 +17,8 @@ import exhibitStyles from '../../../components/Exhibit/Exhibit.module.css';
 
 import { ResponsiveStack, ResponsiveStackChild } from '../../../components/ResponsiveStack/ResponsiveStack.jsx';
 
+import YouTubeEmbed from '../../../components/YouTubeEmbed/YouTubeEmbed.jsx';
+
 import styles from './index.module.css';
 
 const RedCard = ({children, className}) => {
@@ -200,6 +202,10 @@ export default function Home() {
                     <p>IN MY EYEZ features FRANK LAFUNK.</p>
                     <p>PENITENT features COLM from SYLVIA THE HOUSE.</p>
                 </RedCard>
+              </ResponsiveStackChild>
+
+              <ResponsiveStackChild>
+                <YouTubeEmbed ytid={'ShLao7Foj7Q'} showControls={false} height={854} width={480} />
               </ResponsiveStackChild>
 
               <ResponsiveStackChild>
