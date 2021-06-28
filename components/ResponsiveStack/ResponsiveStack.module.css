@@ -1,6 +1,7 @@
 .responsiveStack {
     display: flex;
     height: 100%;
+    flex-shrink: 0;
 }
 
 .responsiveStackChild {
