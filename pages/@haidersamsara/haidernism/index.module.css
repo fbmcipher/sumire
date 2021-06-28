@@ -1,0 +1,29 @@
+.redCard {
+    display: inline-block;
+    padding: 8px 12px;
+    background: rgb(195, 1, 0);
+}
+
+.titleSmaller {
+    margin: 1em 0;
+}
+
+.titleBigger {
+    font-size: 48px; 
+}
+
+.firstSection {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.releaseCredits {
+    width: 500px;
+}
+
+.releaseFeatures {
+    width: 650px;
+    margin-top: 16px;
+}

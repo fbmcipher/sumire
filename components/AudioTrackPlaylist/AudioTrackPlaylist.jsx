@@ -4,9 +4,9 @@ import styles from './AudioTrackPlaylist.module.css';
 import PlaybackContext from '../../contexts/PlaybackContext.jsx';
 import { useEffect, useContext } from 'react';
 
-const AudioTrackPlaylist = ({tracks}) => {
+const AudioTrackPlaylist = ({tracks, styles}) => {
     let { player } = useContext(PlaybackContext);
-    return <div className={styles.playlist}>
+    return <div className={`${styles.playlist}`}>
         <ol>
             { tracks.map((track, index) => {
 
@@ -37,13 +37,13 @@ const Track = ({track, number, tracks}) => {
 
     return (
         <li onClick={onClick} className={styles.track}>
-            <div className={styles.trackTitle}>
+            <div className={styles.trackText}>
                 <div className={styles.trackNumber}>{number}</div>
                 <div className={styles.trackTitle}>{track.title}</div>
             </div>
             <div className={styles.trackInfo}>
-                {/* TODO Track runtime */}
                 {track.explicit ? <ExplicitSymbol /> : null}
+                <div className={styles.trackRuntime}>1:23</div>
             </div>
         </li>
     )

@@ -1,0 +1,9 @@
+.responsiveStack {
+    display: flex;
+    height: 100%;
+}
+
+.responsiveStackChild {
+    margin: 0 32px 0 0;
+    height: 100%;
+}

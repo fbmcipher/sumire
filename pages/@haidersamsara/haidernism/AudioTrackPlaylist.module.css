@@ -1,0 +1,8 @@
+.playlist {
+    display: inline-block;
+    width: 600px;
+    background: rgb(195, 1, 0);
+    font-family: "Arial Unicode MS", "Arial", "Helvetica", sans-serif;
+    letter-spacing: 0.3em;
+    font-size: 22px;
+}

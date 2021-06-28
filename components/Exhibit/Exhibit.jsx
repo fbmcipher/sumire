@@ -1,7 +1,7 @@
 import styles from './Exhibit.module.css';
 import { useEffect, useRef } from 'react';
 
-export default function Exhibit({exhibit, children}){
+export default function Exhibit({exhibit, children, styles, className}){
     /**
      * This is the container element for an Exhibit.
      */
@@ -22,7 +22,7 @@ export default function Exhibit({exhibit, children}){
     }
 
     return (
-        <div ref={exhibitContainerRef} className={styles.exhibit_container} onWheel={onWheel}>
+        <div ref={exhibitContainerRef} className={`${styles.exhibit_container} ${className ? className : null}`} onWheel={onWheel}>
             {children}
         </div>
     )
