@@ -3,3 +3,57 @@
     letter-spacing: 0.3em;
     font-size: 22px;
 }
+
+.lyrics__pretentious0 {
+    grid-column-start: 1;
+    grid-row-start: 99;
+}
+
+.lyrics__pretentious1 {
+    grid-column-start: 2;
+    grid-row-start: 99;
+}
+
+.lyrics__pretentious2 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 99;
+    font-size: 100px;
+    font-weight: 800;
+    font-style: italic;
+    width: 810px;
+    margin: 0 64px;
+}
+
+.lyrics__pretentious3 {
+    grid-column-start: 4;
+    grid-row-start: 99;
+}
+
+.lyrics__pretentious4 {
+    grid-column-start: 5;
+    grid-row-start: 1;
+    grid-row-end: 100;
+    display: inline-flex;
+}
+
+.lyrics__pretentious4 div {
+    width: 90vw;
+    margin: 0 5vw;
+    font-size: 72px;
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.lyrics__pretentious5 {
+    font-size: 32px;
+    display: flex;
+    width: 512px;
+    flex-direction: column;
+    justify-content: space-around;
+    grid-column-start: 6;
+    grid-row-start: 1;
+    grid-row-end: 100;
+}

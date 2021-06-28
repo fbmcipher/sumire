@@ -29,6 +29,7 @@
 }
 
 .trackSection {
+    display: inline-flex;
     min-width: 100vw;
     min-height: 100%;
     max-height: 100%;
@@ -50,7 +51,24 @@
 }
 
 .trackSectionHeader {
-    height: 100%;
-    position: sticky;
-    left: 0;
+    
+}
+
+.lyricsGrid {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". . . . . . . . . . . . . . ."
+      ". . . . . . . . . . . . . . ."
+      ". . . . . . . . . . . . . . ."
+      ". . . . . . . . . . . . . . ."
+      ". . . . . . . . . . . . . . ."
+      ". . . . . . . . . . . . . . ."
+      ". . . . . . . . . . . . . . ."
+      ". . . . . . . . . . . . . . ."
+      ". . . . . . . . . . . . . . ."
+      ". . . . . . . . . . . . . . ."
+      ". . . . . . . . . . . . . . ."; 
 }
