@@ -29,7 +29,7 @@ const Artists = ({artists}) => {
 
     /* render the array of components */
     return (
-        <div>
+        <span>
             {
                 components.map((component, index) => {
                     return <React.Fragment key={index}>
@@ -37,7 +37,7 @@ const Artists = ({artists}) => {
                     </React.Fragment>
                 })
             }
-        </div>
+        </span>
     )
 }
 

@@ -6,6 +6,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Members from '../components/Members/Members.jsx';
+import Carousel from '../components/Carousel/Carousel.jsx';
+import ExhibitCard from '../components/ExhibitCard/ExhibitCard.jsx';
 
 const members = [
   {
@@ -19,7 +21,8 @@ const members = [
   },
   {
     name: 'Caracara',
-    imageSrc: 'https://via.placeholder.com/150x150'
+    imageSrc: 'https://via.placeholder.com/150x150',
+    username: 'caracara',
   },
   {
     name: 'pier_ogii',
@@ -31,8 +34,50 @@ const members = [
   },
   {
     name: 'HAM',
-    imageSrc: 'https://via.placeholder.com/150x150'
+    imageSrc: 'https://via.placeholder.com/150x150',
+    username: 'ham'
   }
+]
+
+const getArtistByUsername = (username) => {
+  /**
+   * Returns an artist from the members array.
+   * -normally- i would fetch this data using an API or something,
+   * but since this assignment is front-end only, i just need
+   * enough functionality to actually bring in data
+   */
+
+  return members.filter(member => member.username === username)[0];
+}
+
+const exhibits = [
+  {
+    title: "HAIDERNISM",
+    slug: 'haidernism', /* slug = URL-safe identifier */
+    artists: [
+      getArtistByUsername('haidersamsara')
+    ],
+    imageSrc: '/exhibits/haidernism.png',
+    type: 'album'
+  },
+  {
+    title: "There Is A Beautiful Nothing",
+    slug: 'thereisabeautifulnothing',
+    artists: [
+      getArtistByUsername('caracara')
+    ],
+    imageSrc: '/exhibits/haidernism.png',
+    type: 'album'
+  },
+  {
+    title: "the fruity collection",
+    slug: 'fruity', /* slug = URL-safe identifier */
+    artists: [
+      getArtistByUsername('ham')
+    ],
+    imageSrc: '/exhibits/haidernism.png',
+    type: 'fashion collection'
+  },
 ]
 
 export default function Home() {
@@ -46,8 +91,9 @@ export default function Home() {
 
       <main className={styles.main}>
         <Members members={members} />
-        <p>This is a page that overrides the Layout</p>
-        <Link href="/@haidersamsara/haidernism">TO Haidernism</Link>
+        <Carousel>
+          {exhibits.map(exhibit => <ExhibitCard exhibit={exhibit} /> )}
+        </Carousel>
       </main>
 
       <footer className={styles.footer}>

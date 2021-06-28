@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import '../styles/haidernism.css'
-
+import '../styles/wavehaus.css';
+import '../styles/GTWalsheim.css';
 import '../styles/reset.css'; /* CSS reset file */
 import PageLayout from '../layouts/PageLayout/PageLayout.jsx';
 
