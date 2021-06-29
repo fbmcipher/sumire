@@ -5,6 +5,7 @@
     background-size: cover;
     color: #FFFFFF;
     font-family: 'GT Walsheim', sans-serif;
+    box-shadow: 0px 2px 4px rgba(0,0,0,.5);
 }
 
 .exhibit_info {

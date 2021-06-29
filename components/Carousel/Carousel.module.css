@@ -1,0 +1,11 @@
+.carousel {
+    display: inline-flex;
+    gap: 64px;
+    padding: 64px 1024px 64px 64px;
+}
+
+.carouselContainer {
+    overflow-x: scroll;
+    max-width: 100vw;
+    white-space: nowrap;
+}

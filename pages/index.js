@@ -50,7 +50,7 @@ const getArtistByUsername = (username) => {
   return members.filter(member => member.username === username)[0];
 }
 
-const exhibits = [
+var exhibits = [
   {
     title: "HAIDERNISM",
     slug: 'haidernism', /* slug = URL-safe identifier */
@@ -80,6 +80,9 @@ const exhibits = [
   },
 ]
 
+/* duplicate */
+exhibits = [...exhibits]
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -92,7 +95,10 @@ export default function Home() {
       <main className={styles.main}>
         <Members members={members} />
         <Carousel>
-          {exhibits.map(exhibit => <ExhibitCard exhibit={exhibit} /> )}
+          {exhibits.map(exhibit => {
+            return <ExhibitCard exhibit={exhibit} />
+          })
+          }
         </Carousel>
       </main>
 
