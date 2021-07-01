@@ -1,0 +1,9 @@
+.carouselLayout {
+    /* Display the entire page as a flexbox, with
+       columns instead of rows.
+       Then, set flex-grow on main (the content section) so it fills
+       up the entire page. (See /pages/index.module.css for an example.) */
+
+    display: flex;
+    flex-direction: column;
+}

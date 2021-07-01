@@ -1,9 +1,10 @@
 import { getStylesForProperty } from 'css-to-react-native';
+import { useResizeDetector } from 'react-resize-detector';
 import styles from './ExhibitCard.module.css';
 import Artists from '../Artists/Artists.jsx';
 import Link from 'next/link';
 
-const ExhibitCard = ({exhibit, focussed, ref}) => {
+const ExhibitCard = ({exhibit, focussed}) => {
     /** This component is used on the home/artist pages
      *  to link to an exhibit. Displays exhibit thumbnail,
      *  title, artists, content type, etc., as seen in mockup.
@@ -15,6 +16,14 @@ const ExhibitCard = ({exhibit, focussed, ref}) => {
      * @property {object} exhibit — the exhibit to display
      * @property {object} idKey — unique exhibit ID. used to identify exhibits in the carousel
     */
+   
+    /* get element height as a var so we can set it to width */
+    const { height, width, ref } = useResizeDetector({
+        handleHeight: true,
+        onResize: ()=>{
+            console.log('move');
+        }
+    });
 
     console.log(exhibit.slug);
 
@@ -24,15 +33,18 @@ const ExhibitCard = ({exhibit, focussed, ref}) => {
     return (
         <Link href={link}>
             <div
+            ref={ref}
             className={styles.exhibit_card}
             style={{
-                backgroundImage: `url(${exhibit.imageSrc})`
+                backgroundImage: `url(${exhibit.imageSrc})`,
+                width: `${height}px`
             }}
             id={exhibit.slug}
         >
             {/* Vignette makes text more readable on light bgs */}
             {/* Only display if focussed */}
-            <div className={styles.exhibit_detail}>
+            <div 
+            className={styles.exhibit_detail}>
                 <div className={styles.vignette}></div>
                 <div className={styles.exhibit_info}>
                     <div></div>                

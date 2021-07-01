@@ -14,7 +14,7 @@ import AudioContext from '../../contexts/AudioContext.jsx';
 import DataContext from '../../contexts/DataContext.jsx';
 
 
-export default ({children}) => {
+export default ({children, className}) => {
     /** begin mock data */
     const members = [
         {
@@ -90,7 +90,6 @@ export default ({children}) => {
     ]
 
     const data = {members, exhibits, helpers};
-    console.log({data});
 
     /** end mock data */
 
@@ -99,7 +98,7 @@ export default ({children}) => {
             <AudioHandler>
                 <div id="sumire">
 
-                    <div className={styles.layout}>
+                    <div className={`${styles.layout} ${className ? className : ''}`}>
                         <TopBar />
                         {children}
                     </div>

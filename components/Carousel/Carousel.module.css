@@ -1,11 +1,15 @@
 .carouselContainer {
     margin: 0 0 32px 0;
+    /* Fill up the entire container so that the carousel can. */
+    height: 100%;
 }
 
 .carousel {
+    height: 100%;
     display: inline-flex;
     gap: 64px;
-    padding: 0 0 32px 0;
+    padding: 24px 0;
+    align-items: center;
 }
 
 .carouselContainer::-webkit-scrollbar {

@@ -1,0 +1,10 @@
+.main {
+    /* Fill the entire height of the page so that Carousel can.
+       (See ./components/Carousel/Carousel.module.css) */
+    flex: 1;
+}
+
+.footer {
+    flex: 0;
+    margin: 24px auto;
+}
