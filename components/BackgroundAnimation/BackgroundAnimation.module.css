@@ -1,0 +1,33 @@
+.backgroundAnimation {
+    width: 200vw;
+    height: 200vw;
+    transform: scaleX(-1);
+    background-image: url('/logo.svg');
+    background-size: cover;
+    background-position: center center;
+    z-index: 0;
+    opacity: .15;
+    animation: bg-frames 540s infinite;
+    transform-origin: center center
+}
+
+.backgroundAnimationContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes bg-frames {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
