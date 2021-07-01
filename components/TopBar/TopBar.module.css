@@ -19,7 +19,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 0 0 16px 0;
 }
 
 .typemark {
@@ -31,14 +30,15 @@
     margin: 0 0 8px 0;
 }
 
+.typemark {
+    font-size: 36px
+}
+
 @media (min-width: 1440px){
+    /* 1440px and greater */
     .logomark {
         width: 96px;
         height: 96px
-    }
-
-    .typemark {
-        font-size: 36px;
     }
     
     .logoContainer {
@@ -49,7 +49,50 @@
     .logomark {
         margin: 0 24px 0 0;
     }
+
+    .links {
+        margin: 0 0 0 32px;
+    }
+
+    .topbarSectionLeft {
+        display: flex;
+        align-items: center;
+    }
 }
+
+@media (max-width: 1440px) {
+    /* 1024px -> 1440px */
+    .topbarSectionLeft {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .topbarSectionLeft .links {
+        margin: 0 0 5px 16px;
+    }
+
+    .logomark {
+        width: 96px;
+        height: 96px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* 768px -> 1024px */
+    .topbarSectionLeft {
+        display: block;
+    }
+
+    .topbarSectionLeft .links {
+        margin: 8px 0 0 0;
+    }
+
+    .logomark {
+        width: 96px;
+        height: 96px;
+    }
+}
+
 
 /* top bar links */
 

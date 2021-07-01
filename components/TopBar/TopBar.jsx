@@ -16,7 +16,7 @@ const TopBar = props => {
 
     return (
         <header className={styles.topbar}>
-            <div className="top-bar__section-left">
+            <div className={styles.topbarSectionLeft}>
                 <TopBarLogo />
                 <TopBarLinks />
             </div>
@@ -73,12 +73,14 @@ const TopBarLogo = props => {
      */
 
     return (
-        <div className={styles.logoContainer}>
-            <div className={styles.logomark}>
-                <Image src={logoSrc} alt="sumire logo" width={144} height={144} />
+        <Link href="/">
+            <div className={styles.logoContainer}>
+                <div className={styles.logomark}>
+                    <Image src={logoSrc} alt="sumire logo" width={144} height={144} />
+                </div>
+                <div className={styles.typemark}>made by sumire</div>
             </div>
-            <div className={styles.typemark}>made by sumire</div>
-        </div>
+        </Link>
     )
 }
 
