@@ -7,7 +7,7 @@
     background-position: center center;
     z-index: 0;
     opacity: .15;
-    animation: bg-frames 540s infinite;
+    animation: bg-frames 540s linear infinite;
     transform-origin: center center
 }
 

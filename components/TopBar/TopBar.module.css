@@ -8,6 +8,11 @@
     z-index: 1;
 }
 
+.topbarSectionRight {
+    display: flex;
+    align-items: center;
+}
+
 /* logo styles */
 
 .logoContainer {
@@ -47,6 +52,15 @@
 }
 
 /* top bar links */
+
+.socialLink {
+    margin: 0 8px;
+}
+
+.socialLink img {
+    width: 32px;
+    height: 32px;
+}
 
 nav.links ol {
     list-style-type: none;

@@ -21,8 +21,8 @@ const TopBar = props => {
                 <TopBarLinks />
             </div>
 
-            <div className="top-bar__section-right">
-                <div className="top-bar__social-links">
+            <div className={styles.topbarSectionRight}>
+                <div className={styles.topbarSocialLinks}>
                     <SocialLink name="instagram" href="javascript:alert('stubbed')" />
                     <SocialLink name="twitter" href="javascript:alert('stubbed')" />
                     <SocialLink name="tiktok" href="javascript:alert('stubbed')" />
@@ -40,8 +40,9 @@ const SocialLink = ({name, href})=> {
      */
 
     const socialLinkSrc = require(`./img/${name}.svg`);
+    console.log(socialLinkSrc);
     return (
-        <a href={href} aria-label={name}>
+        <a className={styles.socialLink} href={href} aria-label={name}>
             <Image src={socialLinkSrc} focusable="false" width="24" height="24" />
         </a>
     )
