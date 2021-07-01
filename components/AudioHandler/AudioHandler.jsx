@@ -6,7 +6,7 @@ import NowPlaying from '../../components/NowPlaying/NowPlaying.jsx';
 
 /* Use a Context to keep track of what is being played throughout the application.
    By default, we aren't playing anything, so set it to a JS object with playing: false */
-import PlaybackContext from '../../contexts/PlaybackContext.jsx';
+import AudioContext from '../../contexts/AudioContext.jsx';
 
 const AudioHandler = props => {
     /* This is the root AudioHandler component.
@@ -27,7 +27,7 @@ const AudioHandler = props => {
     const [ curTrack, setCurTrack ] = useState(null);
 
     /* Init context */
-    const ctx = useContext(PlaybackContext);
+    const ctx = useContext(AudioContext);
 
     /* Helper functions */
     const playAudioFile = async (src) => {
@@ -66,14 +66,14 @@ const AudioHandler = props => {
     }, [playingIdx, queue])
 
     return (
-        <PlaybackContext.Provider value={{
+        <AudioContext.Provider value={{
             queue, setQueue, playingIdx, setPlayingIdx, curTrack, setCurTrack,
             audioTag
         }}>
             <NowPlaying />
             <audio ref={audioTag}></audio>
             {props.children}
-        </PlaybackContext.Provider>
+        </AudioContext.Provider>
     )
 }
 

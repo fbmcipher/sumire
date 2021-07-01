@@ -1,11 +1,11 @@
 /* Enumerates an array of AudioTracks and creates a tracklist that the user can navigate */
 
 import styles from './AudioTrackPlaylist.module.css';
-import PlaybackContext from '../../contexts/PlaybackContext.jsx';
+import AudioContext from '../../contexts/AudioContext.jsx';
 import { useEffect, useContext } from 'react';
 
 const AudioTrackPlaylist = ({tracks, styles}) => {
-    let { player } = useContext(PlaybackContext);
+    let { player } = useContext(AudioContext);
     return <div className={`${styles.playlist}`}>
         <ol>
             { tracks.map((track, index) => {
@@ -26,7 +26,7 @@ const AudioTrackPlaylist = ({tracks, styles}) => {
 }
 
 const Track = ({track, number, tracks}) => {
-    const { setQueue, setPlayingIdx } = useContext(PlaybackContext);
+    const { setQueue, setPlayingIdx } = useContext(AudioContext);
 
     const onClick = (e)=>{
         /* If this track is already playing, pause playback.

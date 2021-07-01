@@ -66,7 +66,7 @@ var exhibits = [
     artists: [
       getArtistByUsername('caracara')
     ],
-    imageSrc: '/exhibits/haidernism.png',
+    imageSrc: '/exhibits/thereisabeautifulnothing.jpg',
     type: 'album'
   },
   {
@@ -75,7 +75,7 @@ var exhibits = [
     artists: [
       getArtistByUsername('ham')
     ],
-    imageSrc: '/exhibits/haidernism.png',
+    imageSrc: '/exhibits/fruity.png',
     type: 'fashion collection'
   },
 ]

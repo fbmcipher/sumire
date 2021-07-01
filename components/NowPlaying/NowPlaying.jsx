@@ -1,12 +1,12 @@
 import { useContext, useState, useRef } from 'react';
-import PlaybackContext from '../../contexts/PlaybackContext.jsx';
+import AudioContext from '../../contexts/AudioContext.jsx';
 import Artists from '../../components/Artists/Artists.jsx';
 import styles from './NowPlaying.module.css';
 
 const NowPlaying = ({playing}) => {
 
     return (
-        <PlaybackContext.Consumer>
+        <AudioContext.Consumer>
             { ({curTrack, audioTag}) => {
                 /* Instead of passing thru track duration as a prop to progress,
                    I will manipulate the element directly using the traditional
@@ -28,7 +28,7 @@ const NowPlaying = ({playing}) => {
                     </div>
                 )
             } }
-        </PlaybackContext.Consumer>
+        </AudioContext.Consumer>
     )
 }
 

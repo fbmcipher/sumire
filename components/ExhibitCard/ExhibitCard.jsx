@@ -1,6 +1,7 @@
 import { getStylesForProperty } from 'css-to-react-native';
 import styles from './ExhibitCard.module.css';
 import Artists from '../Artists/Artists.jsx';
+import Link from 'next/link';
 
 const ExhibitCard = ({exhibit, focussed, ref}) => {
     /** This component is used on the home/artist pages
@@ -12,15 +13,17 @@ const ExhibitCard = ({exhibit, focussed, ref}) => {
      *  in its parent (typically the carousel)
      * 
      * @property {object} exhibit — the exhibit to display
-     * @property {object} focussed - passed by parent to indicate
-     *  whether or not to show info
      * @property {object} idKey — unique exhibit ID. used to identify exhibits in the carousel
     */
 
     console.log(exhibit.slug);
 
+    // link is made up of exhibit's primary Artists and the slug.
+    let link = `/@${exhibit.artists[0].username}/${exhibit.slug}`
+
     return (
-        <div
+        <Link href={link}>
+            <div
             className={styles.exhibit_card}
             style={{
                 backgroundImage: `url(${exhibit.imageSrc})`
@@ -29,8 +32,7 @@ const ExhibitCard = ({exhibit, focussed, ref}) => {
         >
             {/* Vignette makes text more readable on light bgs */}
             {/* Only display if focussed */}
-            {focussed ? (
-                <>
+            <div className={styles.exhibit_detail}>
                 <div className={styles.vignette}></div>
                 <div className={styles.exhibit_info}>
                     <div></div>                
@@ -49,9 +51,9 @@ const ExhibitCard = ({exhibit, focussed, ref}) => {
                         </div>
                     </div>
                 </div>
-            </>
-            ) : null }
+            </div>
         </div>
+        </Link>
     )
 }
 

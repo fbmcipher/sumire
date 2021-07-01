@@ -1,0 +1,13 @@
+/* TODO any way to make CSS modules cascade? */
+
+.exhibit_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    z-index: 1000;
+    color: white;
+}

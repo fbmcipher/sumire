@@ -1,0 +1,11 @@
+.playlist {
+    display: inline-block;
+    width: 600px;
+    font-family: "Benne", serif;
+    font-size: 32px;
+    line-height: 1.4em;
+}
+
+.playlist ol {
+    padding: 0;
+}

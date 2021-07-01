@@ -6,6 +6,7 @@
     color: #FFFFFF;
     font-family: 'GT Walsheim', sans-serif;
     box-shadow: 0px 2px 4px rgba(0,0,0,.5);
+    cursor: pointer;
 }
 
 .exhibit_info {
@@ -19,6 +20,7 @@
     z-index: 2;
     width: 100%;
     height: 100%;
+    opacity: 1;
 }
 
 .exhibit_info .exhibit_title {
@@ -42,4 +44,21 @@
     height: 100%;
     background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.5));
     z-index: 1;
+}
+
+.exhibit_detail {
+    opacity: 0;
+    transition: 0.15s ease-in-out;
+}
+
+.exhibit_detail:hover {
+    opacity: 1;
+}
+
+@media (hover: none) {
+    /* If the device has no capability for "hovering" (i.e. it is a touchscreen),
+       always show exhibit detail & vignette. */
+    .exhibit_detail {
+        opacity: 1;
+    }
 }

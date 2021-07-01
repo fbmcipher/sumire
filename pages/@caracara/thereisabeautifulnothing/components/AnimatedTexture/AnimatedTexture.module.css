@@ -1,0 +1,47 @@
+.textureTileContainer {
+    position: fixed;
+    width: 2048px;
+    height: 2048px;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: brightness(.77);
+    animation: anim1 40s infinite;
+}
+
+@keyframes anim1 {
+    0% {
+        transform: translate(0, 0)
+    }
+
+    100% {
+        transform: translate(-249px, -384px);
+    }
+}
+
+.imageTopLeft {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.imageTopRight {
+    position: absolute;
+    top: 0;
+    left: 1024px;
+    transform: scaleX(-1);
+}
+
+.imageBottomLeft {
+    position: absolute;
+    top: 1024px;
+    left: 0;
+    transform: scaleY(-1);
+}
+
+.imageBottomRight {
+    position: absolute;
+    top: 1024px;
+    left: 1024px;
+    transform: scaleX(-1) scaleY(-1);
+}

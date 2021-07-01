@@ -1,0 +1,23 @@
+.exhibit-tiabn {
+    background: black;
+}
+
+.exhibit-tiabn h1 {
+    font-family: Benne, serif;
+    font-size: 48px;
+    font-weight: 500;
+}
+
+.exhibit-tiabn .container {
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+}
+
+.exhibit-tiabn .content {
+    padding: 0 0 0 10vw;
+}
+
+.exhibit-tiabn img.banner {
+    height: 100vh;
+}

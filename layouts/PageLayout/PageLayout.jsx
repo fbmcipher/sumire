@@ -6,7 +6,7 @@ import AudioHandler from '../../components/AudioHandler/AudioHandler.jsx';
 
 /* Use a Context to keep track of what is being played throughout the application.
    By default, we aren't playing anything, so set it to a JS object with playing: false */
-import PlaybackContext from '../../contexts/PlaybackContext.jsx';
+import AudioContext from '../../contexts/AudioContext.jsx';
 
 export default ({children}) => {
 
@@ -14,7 +14,7 @@ export default ({children}) => {
 
     /* this state variable manages playback metadata */
     let [ currentlyPlaying, setCurrentlyPlaying ] = useState({playing: false})
-    let { player } = useContext(PlaybackContext);
+    let { player } = useContext(AudioContext);
 
     console.log({player});
 
