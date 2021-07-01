@@ -1,8 +1,32 @@
+.carouselContainer {
+    margin: 0 0 32px 0;
+}
+
 .carousel {
     display: inline-flex;
     gap: 64px;
-    padding: 64px 1024px 64px 64px;
+    padding: 0 0 32px 0;
 }
+
+.carouselContainer::-webkit-scrollbar {
+    height: 30px;
+    margin: 24px 0;
+    box-shadow: 0 0 1px rgba(0,0,0,.5);
+}
+
+.carouselContainer::-webkit-scrollbar-track {
+    background: #2C1D59;
+    border-radius: 64px;
+    margin: 24px 0;
+}
+
+.carouselContainer::-webkit-scrollbar-thumb {
+    background: #FF70C7;
+    border-radius: 64px;
+    margin: 24px;
+    top: 30px;
+}
+
 
 .carouselContainer {
     overflow-x: scroll;

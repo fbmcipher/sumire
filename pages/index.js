@@ -93,13 +93,13 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Members members={members} />
         <Carousel>
           {exhibits.map(exhibit => {
             return <ExhibitCard exhibit={exhibit} />
           })
           }
         </Carousel>
+        <Members members={members} />
       </main>
 
       <footer className={styles.footer}>
