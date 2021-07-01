@@ -8,82 +8,11 @@ import styles from '../styles/Home.module.css'
 import Members from '../components/Members/Members.jsx';
 import Carousel from '../components/Carousel/Carousel.jsx';
 import ExhibitCard from '../components/ExhibitCard/ExhibitCard.jsx';
-
-const members = [
-  {
-    name: 'faiz',
-    imageSrc: 'https://via.placeholder.com/150x150'
-  },
-  {
-    name: 'HAIDER SAMSARA',
-    imageSrc: 'https://assets.cosy.land/images/2021/02/HD26.jpg',
-    username: 'haidersamsara'
-  },
-  {
-    name: 'Caracara',
-    imageSrc: 'https://via.placeholder.com/150x150',
-    username: 'caracara',
-  },
-  {
-    name: 'pier_ogii',
-    imageSrc: 'https://via.placeholder.com/150x150'
-  },
-  {
-    name: 'pjd.',
-    imageSrc: 'https://via.placeholder.com/150x150'
-  },
-  {
-    name: 'HAM',
-    imageSrc: 'https://via.placeholder.com/150x150',
-    username: 'ham'
-  }
-]
-
-const getArtistByUsername = (username) => {
-  /**
-   * Returns an artist from the members array.
-   * -normally- i would fetch this data using an API or something,
-   * but since this assignment is front-end only, i just need
-   * enough functionality to actually bring in data
-   */
-
-  return members.filter(member => member.username === username)[0];
-}
-
-var exhibits = [
-  {
-    title: "HAIDERNISM",
-    slug: 'haidernism', /* slug = URL-safe identifier */
-    artists: [
-      getArtistByUsername('haidersamsara')
-    ],
-    imageSrc: '/exhibits/haidernism.png',
-    type: 'album'
-  },
-  {
-    title: "There Is A Beautiful Nothing",
-    slug: 'thereisabeautifulnothing',
-    artists: [
-      getArtistByUsername('caracara')
-    ],
-    imageSrc: '/exhibits/thereisabeautifulnothing.jpg',
-    type: 'album'
-  },
-  {
-    title: "the fruity collection",
-    slug: 'fruity', /* slug = URL-safe identifier */
-    artists: [
-      getArtistByUsername('ham')
-    ],
-    imageSrc: '/exhibits/fruity.png',
-    type: 'fashion collection'
-  },
-]
-
-/* duplicate */
-exhibits = [...exhibits]
+import DataContext from '../contexts/DataContext.jsx';
+import { useContext } from 'react'
 
 export default function Home() {
+  const {members, exhibits} = useContext(DataContext);
   return (
     <div className={styles.container}>
       <Head>
