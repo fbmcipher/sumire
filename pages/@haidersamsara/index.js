@@ -6,7 +6,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../index.module.css'
 
-export default function Home() {
+const ProfilePage = (props) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -21,3 +21,7 @@ export default function Home() {
     </div>
   )
 }
+
+ProfilePage.layout = 'ProfileLayout';
+
+export default ProfilePage;

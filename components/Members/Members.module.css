@@ -7,6 +7,33 @@
     cursor: pointer;
 }
 
+.member.active .memberImageContainer:after {
+    content: '';
+    background: rgba(255,255,255,.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    z-index: 1;
+    animation: expandMemberActive 0.2s ease-in-out;
+}
+
+@keyframes expandMemberActive {
+    0% { transform: scale(0.8) }
+    100% { transform: scale(1) }
+}
+
+.memberImageContainer {
+    position: relative;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+}
+
 .memberName {
     color: white;
     margin: 6px 0 0 0;
@@ -14,9 +41,12 @@
 }
 
 .memberImage {
+    width: 64px;
+    height: 64px;
     border-radius: 100%;
     object-fit: cover;
     object-position: center;
+    z-index: 2;
 }
 
 .members {

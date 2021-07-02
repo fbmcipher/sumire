@@ -2,6 +2,7 @@
     margin: 0 0 32px 0;
     /* Fill up the entire container so that the carousel can. */
     height: 100%;
+    position: relative;
 }
 
 .carousel {
@@ -25,10 +26,19 @@
 }
 
 .carouselContainer::-webkit-scrollbar-thumb {
+    border: 8px solid #2C1D59;
     background: #FF70C7;
     border-radius: 64px;
     margin: 24px;
     top: 30px;
+}
+
+.carouselContainer::-webkit-scrollbar-thumb:hover {
+    background: #fda6dc;
+}
+
+.carouselContainer::-webkit-scrollbar-thumb:active {
+    background: rgb(161, 51, 119);
 }
 
 

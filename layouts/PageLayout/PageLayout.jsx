@@ -19,7 +19,8 @@ export default ({children, className}) => {
     const members = [
         {
         name: 'faiz',
-        imageSrc: 'https://via.placeholder.com/150x150'
+        imageSrc: 'https://via.placeholder.com/150x150',
+        username: 'faiz'
         },
         {
         name: 'HAIDER SAMSARA',
@@ -33,11 +34,13 @@ export default ({children, className}) => {
         },
         {
         name: 'pier_ogii',
-        imageSrc: 'https://via.placeholder.com/150x150'
+        imageSrc: 'https://via.placeholder.com/150x150',
+        username: 'pier_ogii'
         },
         {
         name: 'pjd.',
-        imageSrc: 'https://via.placeholder.com/150x150'
+        imageSrc: 'https://via.placeholder.com/150x150',
+        username: 'pjd'
         },
         {
         name: 'HAM',

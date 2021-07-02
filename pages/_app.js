@@ -6,10 +6,12 @@ import '../styles/fonts/GTWalsheim.css';
 import '../styles/globals.css';
 import PageLayout from '../layouts/PageLayout/PageLayout.jsx';
 import CarouselLayout from '../layouts/CarouselLayout/CarouselLayout.jsx'
+import ProfileLayout from '../layouts/ProfileLayout/ProfileLayout.jsx';
 
 let layouts = {
   PageLayout,
-  CarouselLayout
+  CarouselLayout,
+  ProfileLayout
 }
 
 function MyApp({ Component, pageProps }) {
