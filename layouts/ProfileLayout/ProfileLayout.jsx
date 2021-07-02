@@ -3,7 +3,7 @@
  */
 
  import styles from '../../pages/index.module.css';
- import PageLayout from '../PageLayout/PageLayout.jsx';
+ import CarouselLayout from '../CarouselLayout/CarouselLayout.jsx';
  import cstyles from '../CarouselLayout/CarouselLayout.module.css';
  import DataContext from '../../contexts/DataContext.jsx';
  import BackgroundAnimation from '../../components/BackgroundAnimation/BackgroundAnimation.jsx';
@@ -13,11 +13,16 @@
  import ExhibitCard from '../../components/ExhibitCard/ExhibitCard.jsx';
  import Members from '../../components/Members/Members.jsx';
 
+ /* We use Next.js's router object to identify the profile
+    page to display. */
+
+ import { useRouter } from 'next/router'
+
  const ProfileLayout = ({children}) => {
      return (
-        <PageLayout>
+        <CarouselLayout>
             <ProfileLayoutContent />
-        </PageLayout>
+        </CarouselLayout>
      )
  }
 
@@ -26,6 +31,9 @@
     heavy lifting. I had to split it because only child
     components of PageLayout can access DataContext. */
     const {members, exhibits} = useContext(DataContext);
+    const { pathname } = useRouter();
+
+    const currentUsername = pathname.replace('/@', '');
 
      return (
         <>
@@ -33,9 +41,18 @@
 
         <main className={styles.main}>
         <Carousel>
-            {exhibits.map(exhibit => {
-            return <ExhibitCard exhibit={exhibit} />
-            })
+            {
+                /* Filter exhibits to only get ones
+                   the current user has created
+                   or collaborated on.
+                   We do this by checking if the username appears in exhibit's
+                   artists array.
+                */
+                
+                exhibits.filter(exhibit => {
+                    let { artists } = exhibit;
+                    return (artists.filter(artist => artist.username == currentUsername)).length;
+                }).map(exhibit => <ExhibitCard exhibit={exhibit} />)
             }
         </Carousel>
         </main>
