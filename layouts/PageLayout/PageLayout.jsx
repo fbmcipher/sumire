@@ -18,34 +18,35 @@ export default ({children, className}) => {
     /** begin mock data */
     const members = [
         {
-        name: 'faiz',
-        imageSrc: 'https://via.placeholder.com/150x150',
-        username: 'faiz'
+            name: 'faiz',
+            imageSrc: 'https://via.placeholder.com/150x150',
+            username: 'faiz'
         },
         {
-        name: 'HAIDER SAMSARA',
-        imageSrc: 'https://assets.cosy.land/images/2021/02/HD26.jpg',
-        username: 'haidersamsara'
+            name: 'HAIDER SAMSARA',
+            imageSrc: 'https://assets.cosy.land/images/2021/02/HD26.jpg',
+            backgroundSrc: '/artists/haidersamsara/bg.jpg',
+            username: 'haidersamsara'
         },
         {
-        name: 'Caracara',
-        imageSrc: 'https://via.placeholder.com/150x150',
-        username: 'caracara',
+            name: 'Caracara',
+            imageSrc: 'https://via.placeholder.com/150x150',
+            username: 'caracara',
         },
         {
-        name: 'pier_ogii',
-        imageSrc: 'https://via.placeholder.com/150x150',
-        username: 'pier_ogii'
+            name: 'pier_ogii',
+            imageSrc: 'https://via.placeholder.com/150x150',
+            username: 'pier_ogii'
         },
         {
-        name: 'pjd.',
-        imageSrc: 'https://via.placeholder.com/150x150',
-        username: 'pjd'
+            name: 'pjd.',
+            imageSrc: 'https://via.placeholder.com/150x150',
+            username: 'pjd'
         },
         {
-        name: 'HAM',
-        imageSrc: 'https://via.placeholder.com/150x150',
-        username: 'ham'
+            name: 'HAM',
+            imageSrc: 'https://via.placeholder.com/150x150',
+            username: 'ham'
         }
     ]
 

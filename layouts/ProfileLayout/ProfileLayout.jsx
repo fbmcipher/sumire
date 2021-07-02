@@ -2,16 +2,18 @@
  *  Extends CarouselLayout (which itself extends PageLayout)
  */
 
- import styles from '../../pages/index.module.css';
+ import styles from './ProfileLayout.module.css';
+ import istyles from '../../pages/index.module.css';
  import CarouselLayout from '../CarouselLayout/CarouselLayout.jsx';
  import cstyles from '../CarouselLayout/CarouselLayout.module.css';
  import DataContext from '../../contexts/DataContext.jsx';
- import BackgroundAnimation from '../../components/BackgroundAnimation/BackgroundAnimation.jsx';
+ import Background from '../../components/Background/Background.jsx';
  import Carousel from '../../components/Carousel/Carousel.jsx';
  import { useContext } from 'react'
  import Head from 'next/head'
  import ExhibitCard from '../../components/ExhibitCard/ExhibitCard.jsx';
  import Members from '../../components/Members/Members.jsx';
+ import Image from 'next/image';
 
  /* We use Next.js's router object to identify the profile
     page to display. */
@@ -34,12 +36,25 @@
     const { pathname } = useRouter();
 
     const currentUsername = pathname.replace('/@', '');
+    
+    /* Now that we have the current username, we should be
+       able to fetch the artist's object from DataContext! */
+    
+    const member = members.filter(member => member.username == currentUsername)[0];
 
      return (
         <>
-        <BackgroundAnimation />
 
-        <main className={styles.main}>
+        {member.backgroundSrc
+            ?
+            <Background className={styles.profileBackground}>
+                <Image src={member.backgroundSrc} layout='fill' />
+            </Background>
+            :
+        null}
+        
+
+        <main className={istyles.main}>
         <Carousel>
             {
                 /* Filter exhibits to only get ones
@@ -57,7 +72,7 @@
         </Carousel>
         </main>
 
-        <footer className={styles.footer}>
+        <footer className={istyles.footer}>
             <Members active="haidersamsara" members={members} />
         </footer>
         </>

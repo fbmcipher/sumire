@@ -1,0 +1,18 @@
+.profileBackground img {
+    /* cover, instead of stretch, background image. */
+    object-fit: cover;
+    object-position: center center;
+    animation: animateIn .5s ease-in-out;
+}
+
+@keyframes animateIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
