@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from './TopBar.module.css';
 import logoSrc from './img/logo.png';
+import classNames from 'classnames';
+import { useRouter } from 'next/router';
 
 const TopBar = props => {
     /**
@@ -56,14 +58,24 @@ const TopBarLinks = props => {
     return (
         <nav className={styles.links}>
             <ol>
-                <li>
-                    <Link href='/about'>about</Link>
-                </li>
-                <li>
-                    <Link href='/shop'>shop</Link>
-                </li>
+                <TopBarLink href="/about">about</TopBarLink>
+                <TopBarLink href="/shop">shop</TopBarLink>
             </ol>
         </nav>
+    )
+}
+
+const TopBarLink = ({children, href}) => {
+    /* This component renders a <li> and <Link> elements for the given href.
+       The <li> rendered gets the "active" class if the current path is the same
+       as the one the link points to. */
+    
+    const { pathname } = useRouter();
+
+    return (
+        <li className={pathname == href ? styles.active : null}>
+            <Link href={href}>{children}</Link>
+        </li>
     )
 }
 

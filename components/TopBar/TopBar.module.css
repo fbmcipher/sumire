@@ -119,6 +119,15 @@ nav.links ol li {
     transition: 0.1s ease-out;
 }
 
+nav.links ol li.active {
+    border-bottom: 3px solid #ff9ed8;
+    color: #ff9ed8;
+}
+
 nav.links ol li:hover {
-    border-bottom: 2px solid #ff90d3;
+    border-bottom: 3px solid #ff9ed8;
+}
+
+nav.links ol li.active:hover {
+    border-bottom: 3px solid #ff9ed8;
 }

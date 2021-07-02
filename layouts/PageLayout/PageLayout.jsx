@@ -88,7 +88,7 @@ export default ({children, className}) => {
         artists: [
             helpers.getArtistByUsername('ham')
         ],
-        imageSrc: '/exhibits/fruity.png',
+        imageSrc: '/exhibits/ham/fruity.png',
         type: 'fashion collection'
         },
     ]

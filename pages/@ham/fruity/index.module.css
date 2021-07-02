@@ -1,0 +1,120 @@
+.container {
+    background-color: #f08000;
+    height: 100%;
+}
+
+/* Intro section */
+section.intro {
+    width: 50vw;
+}
+
+/* Break section */
+section.break {
+    width: 50vw;
+    background-color: #f08000;
+    margin: 0;
+}
+
+/* Pics (models) section */
+section.pics {
+    margin: 0;
+    width: 120vw;
+}
+
+section.pics img {
+    width: 30vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+/* Products section */
+section.fullWidthPic {
+    margin: 0;
+    position: relative;
+    height: 100vh;
+    width: 100vh; /* to force a square that fills the display
+                     TODO responsive query that is other way
+                     around */
+}
+
+section.fullWidthPic img {
+    position: absolute; /* anchored to section as bg */
+    top: 0;
+    left: 0;
+    z-index: 0;
+    height: 100vh;
+    width: 100vh;
+}
+
+section.fullWidthPic .productContent {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+    padding: 32px 32px 48px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.productContent h2 {
+    font-size: 48px;
+    font-weight: 800;
+}
+
+.productContent .productContentBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.productContent .price {
+    display: flex;
+    align-items: baseline;
+}
+
+.productContent .priceSymbol {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.productContent .priceMajor {
+    font-size: 48px;
+    font-weight: 800;
+}
+
+.productContent .priceMinor {
+    font-size: 22px;
+    font-weight: 500;
+    margin-left: .1em;
+}
+
+.productContent .shipping {
+    color: rgba(255,255,255,.9);
+    margin-top: 4px;
+}
+
+.light .shipping {
+    color: rgba(0,0,0,.7);
+}
+
+.light button.addToCart {
+    background: rgba(255,255,255,.5);
+    color: black;
+}
+
+.light {
+    color: rgba(0,0,0,0.8);
+}
+
+button.addToCart {
+    border-radius: 64px;
+    padding: 8px 24px;
+    border: 0;
+    font-family: GT Walsheim, sans-serif;
+    font-size: 18px;
+    text-transform: lowercase;
+    color: white;
+    background: rgba(0,0,0,.5);
+}

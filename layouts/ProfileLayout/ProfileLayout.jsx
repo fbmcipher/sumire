@@ -56,24 +56,26 @@
 
         <main className={istyles.main}>
         <Carousel>
-            {
-                /* Filter exhibits to only get ones
+                {/* Filter exhibits to only get ones
                    the current user has created
                    or collaborated on.
                    We do this by checking if the username appears in exhibit's
                    artists array.
-                */
+                */}
                 
-                exhibits.filter(exhibit => {
+                <div>
+                    <h1>foo</h1>
+                </div>
+
+                {exhibits.filter(exhibit => {
                     let { artists } = exhibit;
                     return (artists.filter(artist => artist.username == currentUsername)).length;
-                }).map(exhibit => <ExhibitCard exhibit={exhibit} />)
-            }
+                }).map(exhibit => <ExhibitCard exhibit={exhibit} />)}
         </Carousel>
         </main>
 
         <footer className={istyles.footer}>
-            <Members active="haidersamsara" members={members} />
+            <Members active={currentUsername} members={members} />
         </footer>
         </>
      )
