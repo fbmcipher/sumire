@@ -5,8 +5,58 @@
     bottom: 0;
     background: white;
     z-index: 100000;
-    padding: 8px 12px;
-    margin: 24px;
+    width: 300px;
+    margin: 0 24px 32px;
     border-radius: 8px;
-    border: 2px solid rgba(0,0,0,.3);
+    box-shadow: 1px 1px 12px rgb(0 0 0 / 20%);
+}
+
+.shoppingCartHeader {
+    background: #6e45e6;
+    border-radius: 8px 8px 0 0;
+    padding: 12px 24px;
+}
+
+.shoppingCart li {
+    padding: 8px;
+    margin: 0 8px;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.shoppingCart li:last-child {
+    border-bottom: unset;
+}
+
+.shoppingCartItem {
+    display: flex;
+    align-items: center;
+}
+
+.shoppingCartItemInfo {
+    flex-grow: 1;
+}
+
+.shoppingCartItemTitle {
+    font-weight: 600;
+}
+
+.shoppingCartItemPrice {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #444;
+}
+
+.shoppingCartItemImage {
+    width: 48px;
+    height: 48px;
+    margin: 0 8px 0 0;
+}
+
+.shoppingCartItemImage img {
+    width: 100%;
+    height: 100%;
+}
+
+.deleteContainer path {
+    fill: #383838;
 }
