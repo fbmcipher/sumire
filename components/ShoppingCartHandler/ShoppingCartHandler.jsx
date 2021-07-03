@@ -52,6 +52,20 @@ const ShoppingCartHandler = ({children}) => {
         forceUpdate();
     }
 
+    const calculateTotal = (currency) => {
+        /* Calculate the total of all elements in the cart for the given currency */
+        
+        let ret = [currency, 0];
+
+        Object.keys(items).forEach(id => {
+            let item = items[id];
+            let price = item.price.filter(price => price[0] == currency)[0];
+            ret[1] += (price[1] * item.qty);
+        })
+
+        return [ret];
+    }
+
     const removeItemFromCart = (item) => {
         /* Removes item from cart. Accepts either item object or item ID. */
         let id;
@@ -72,7 +86,7 @@ const ShoppingCartHandler = ({children}) => {
     return (
         <ShoppingCartContext.Provider value={{
             /* "provides" these values & functions to all Consumers. */
-            items, setItems, addItemToCart, removeItemFromCart
+            items, setItems, addItemToCart, removeItemFromCart, calculateTotal
         }}>
             <ShoppingCart items={items} />
             {children}

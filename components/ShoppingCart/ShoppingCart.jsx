@@ -25,10 +25,12 @@ const ShoppingCart = ({items}) => {
 }
 
 const ShoppingCartFooter = ({items}) => {
+    const { calculateTotal } = useContext(ShoppingCartContext);
+
     return (
         <div className={styles.shoppingCartFooter}>
             <div className={styles.total}>
-                total <Price currency="GBP" price={[["GBP", 4800]]} symFont={true}></Price>
+                total <Price currency="GBP" price={calculateTotal('GBP')} symFont={true}></Price>
             </div>
             <div>
                 <button onClick={()=>{alert('this button does nothing')}}className={styles.checkout}>checkout</button>
