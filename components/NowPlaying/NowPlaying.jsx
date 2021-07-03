@@ -1,7 +1,16 @@
-import { useContext, useState, useRef } from 'react';
+import { useContext, useState, useRef, useEffect } from 'react';
 import AudioContext from '../../contexts/AudioContext.jsx';
 import Artists from '../../components/Artists/Artists.jsx';
 import styles from './NowPlaying.module.css';
+import classNames from 'classnames';
+import { PlayArrow, Pause, FastRewind, FastForward } from '@material-ui/icons';
+import Image from 'next/image';
+
+/* this hook allows us to force a rerender */
+function useForceUpdate(){
+    const [value, setValue] = useState(0); // integer state
+    return () => setValue(value => value + 1); // update the state to force render
+}
 
 const NowPlaying = ({playing}) => {
 
@@ -15,20 +24,72 @@ const NowPlaying = ({playing}) => {
 
                 return (
                     <div className={styles.nowPlaying}>
-                        <div className={styles.trackText}>
-                            <div className={styles.trackTitle}>{curTrack.title}</div>
-                            <Artists artists={curTrack.artists} />
+                        <div className={styles.trackInfo}>
+                        
+                            <div className={styles.trackArt}>
+                                <Image src={curTrack.imageSrc} height={64} width={64} />
+                            </div>
+
+                            <div className={styles.trackText}>
+                                <div className={styles.trackTitle}>{curTrack.title}</div>
+                                <div className={styles.trackArtists}>
+                                    <Artists artists={curTrack.artists} />
+                                </div>
+                            </div>
+
                         </div>
+                        
                         <div className={styles.trackSeek}>
                             <SeekBar audioTag={audioTag} />
                         </div>
                         <div className={styles.trackControls}>
-
+                            <TrackControls audioTag={audioTag} />
                         </div>
                     </div>
                 )
             } }
         </AudioContext.Consumer>
+    )
+}
+
+const TrackControls = ({audioTag}) => {
+    /* Renders track controls for the passed <audio> tag.
+       This means - rewind, play/pause, fast forward. */
+    const forceUpdate = useForceUpdate();
+    const [ didSetPauseEventListener, setDidSetPauseEventListener ] = useState(false);
+
+    if(audioTag.current && !didSetPauseEventListener){
+        audioTag.current.addEventListener('pause', (e)=>{
+            forceUpdate();
+        })
+
+        audioTag.current.addEventListener('play', (e)=>{
+            forceUpdate();
+        })
+    }
+
+    const playPause = ()=>{
+        console.log({audioTag});
+        audioTag.current.paused ? audioTag.current.play() : audioTag.current.pause();
+        forceUpdate();
+    }
+
+    return (
+        <div className={styles.trackControls}>
+
+            <div className={classNames(styles.trackControl, styles.fastRewind)}>
+                <FastRewind />
+            </div>
+
+            <div onClick={playPause} className={classNames(styles.trackControl, styles.playPause)}>
+                {audioTag.current.paused ? <PlayArrow /> : <Pause />}
+            </div>
+
+            <div className={classNames(styles.trackControl, styles.fastForward)}>
+                <FastForward />
+            </div>
+
+        </div>
     )
 }
 
@@ -48,8 +109,6 @@ const SeekBar = ({audioTag}) => {
         isSeekingRef.current = data;
         _setIsSeeking(data);
     }
-
-    var seeking = false;
 
     if(audioTag.current && seekBar.current && !didSetAudioTagListener){
         audioTag.current.addEventListener('timeupdate', (e)=>{
@@ -100,7 +159,7 @@ const SeekBar = ({audioTag}) => {
                 onTouchStart={onMouseDown}
                 onMouseUp={onMouseUp}
                 onTouchEnd={onMouseUp}
-            min="0" max="100" value={0.5} type="range" ref={seekBar} />
+            min="0" max="100" type="range" ref={seekBar} />
         </div>
     )
 }

@@ -1,16 +1,82 @@
+
+
 .nowPlaying {
     position: fixed;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     left: 0;
     bottom: 0;
-    background: white;
+    background: #6e45e6;
     z-index: 100000;
-    padding: 8px 12px;
-    margin: 24px;
+    width: 360px;
+    margin: 0 24px 32px;
     border-radius: 8px;
-    border: 2px solid rgba(0,0,0,.3);
+    box-shadow: 0px 0px 12px #2c1867a8;
+    padding: 12px 24px;    
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.25s ease-out;
+}
+
+.trackInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.trackArt, .trackArt img {
+    border-radius: 6px;
+    border: 2px ​solid rgba(255,255,255,.2);
 }
 
 .trackTitle {
     margin: 0 0 6px 0;
+    font: 800 24px wavehaus;
+    color: rgba(255,255,255,.95);
+}
+
+.trackArtists {
+    font: 800 18px wavehaus;
+    color: rgba(255,255,255,.85);    
+}
+
+.trackSeek input {
+    /* i couldn't figure out a clean way of customising the range element
+    (shockingly) so it's gonna stay like this
+    luckily all modern browsers have decided on a similar shade of blue for the
+    range element :p
+    (in a production build i might've actually built a proper component for this)
+    */
+    width: 100%;
+    border-radius: 100px;
+    filter: hue-rotate(85deg);
+}
+
+.trackSeek input::-webkit-slider-thumb {
+    appearance: none;
+    background: red;
+}
+
+/* Track controls */
+.trackControls {
+    display: flex;
+    justify-content: space-around;
+    width: 220px;
+    margin: 0 auto;
+}
+
+.trackControls .trackControl {
+    cursor: pointer;
+    transition: 0.1s linear;
+}
+
+.trackControls .trackControl:active {
+    transform: scale(0.9);
+    opacity: .5;
+}
+
+.trackControls svg {
+    font-size: 2.5rem;
+    color: #ffffffd4;
 }

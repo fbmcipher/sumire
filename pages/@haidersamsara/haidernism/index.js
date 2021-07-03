@@ -62,6 +62,7 @@ export default function Home() {
               }
           ],
           "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track1.mp3",
+          "imageSrc": '/exhibits/haidernism.png',
           "id": "haidernism_track1"
       },
       {
@@ -75,6 +76,7 @@ export default function Home() {
               }
           ],
           "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track2.mp3",
+          "imageSrc": '/exhibits/haidernism.png',
           "id": "haidernism_track2"
       },
       {
@@ -93,6 +95,7 @@ export default function Home() {
               }
           ],
           "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track3.mp3",
+          "imageSrc": '/exhibits/haidernism.png',
           "id": "haidernism_track3"
       },
       {
@@ -106,6 +109,7 @@ export default function Home() {
               }
           ],
           "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track4.mp3",
+          "imageSrc": '/exhibits/haidernism.png',
           "id": "haidernism_track4"
       },
       {
@@ -119,6 +123,7 @@ export default function Home() {
               }
           ],
           "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track5.mp3",
+          "imageSrc": '/exhibits/haidernism.png',
           "id": "haidernism_track5"
       },
       {
@@ -135,6 +140,7 @@ export default function Home() {
               }
           ],
           "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track6.mp3",
+          "imageSrc": '/exhibits/haidernism.png',
           "id": "haidernism_track6"
       },
       {
@@ -148,6 +154,7 @@ export default function Home() {
               }
           ],
           "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track7.mp3",
+          "imageSrc": '/exhibits/haidernism.png',
           "id": "haidernism_track7"
       },
       {
@@ -166,6 +173,7 @@ export default function Home() {
           ],
           "explicit": true,
           "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track8.mp3",
+          "imageSrc": '/exhibits/haidernism.png',
           "id": "haidernism_track8"
       },
       {
@@ -179,6 +187,7 @@ export default function Home() {
           ],
           "explicit": false,
           "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/haidernism/track9.mp3",
+          "imageSrc": '/exhibits/haidernism.png',
           "id": "haidernism_track9"
       }
   ].map(
