@@ -1,0 +1,28 @@
+.shoppingCartMini {
+    position: fixed;
+    display: block;
+    right: 32px;
+    bottom: 32px;
+    background: #6e45e6e0;
+    color: white;
+    backdrop-filter: blur(2px);
+    display: flex;
+    z-index: 100000;
+    border-radius: 100px;
+    box-shadow: 0px 0px 12px #2c1867a8;
+    opacity: 1;
+    transform: scale(1);
+    transition: 0.25s ease-out;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.shoppingCartMini:global(.hidden) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.shoppingCartMini svg {
+    font-size: 1rem;
+    margin-right: .5rem;
+}

@@ -5,6 +5,7 @@
 
 import ShoppingCartContext from '../../contexts/ShoppingCartContext.jsx';
 import ShoppingCart from '../../components/ShoppingCart/ShoppingCart.jsx';
+import ShoppingCartMini from '../../components/ShoppingCartMini/ShoppingCartMini.jsx';
 import { useState, useContext } from 'react';
 
 /* this hook allows us to force a rerender */
@@ -93,6 +94,7 @@ const ShoppingCartHandler = ({children}) => {
             items, setItems, addItemToCart, removeItemFromCart, calculateTotal,
             cartVisible, setCartVisible
         }}>
+            <ShoppingCartMini />
             <ShoppingCart items={items} />
             {children}
         </ShoppingCartContext.Provider>
