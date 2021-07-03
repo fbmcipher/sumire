@@ -1,7 +1,7 @@
 import { useContext, useState, useRef } from 'react';
 import ShoppingCartContext from '../../contexts/ShoppingCartContext.jsx';
 import styles from './ShoppingCart.module.css';
-import { Delete, Close } from '@material-ui/icons'
+import { Delete, Close, Remove, Add } from '@material-ui/icons'
 import Price from '../../components/Price/Price.jsx';
 
 const ShoppingCart = ({items}) => {
@@ -51,12 +51,24 @@ const ShoppingCartItem = ({item, key}) => {
                         <Price price={item.price} currency={"GBP"} />
                     </div>
                 </div>
-                
+
+                <ShoppingCartItemQtyPicker item={item} />
+
                 <div className={styles.deleteContainer}>
                     <Delete fontSize={"small"} />
                 </div>
             </div>
         </li>
+    )
+}
+
+const ShoppingCartItemQtyPicker = ({item}) => {
+    return (
+        <div className={styles.shoppingCartItemQty}>
+            <button className={styles.shoppingCartItemQtyButton}><Remove /></button>
+            <input className={styles.shoppingCartItemQtyInput} value={item.qty} />
+            <button className={styles.shoppingCartItemQtyButton}><Add /></button>
+        </div>
     )
 }
 

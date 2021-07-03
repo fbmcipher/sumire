@@ -5,7 +5,7 @@
     bottom: 0;
     background: white;
     z-index: 100000;
-    width: 300px;
+    width: 326px;
     margin: 0 24px 32px;
     border-radius: 8px;
     box-shadow: 1px 1px 12px rgb(0 0 0 / 20%);
@@ -59,4 +59,48 @@
 
 .deleteContainer path {
     fill: #383838;
+}
+
+.shoppingCartItemPrice {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.shoppingCartItemQty {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 8px;
+}
+
+.shoppingCartItemQtyButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    width: 20px; height: 20px;
+    border: 0;
+    color: #444;
+    background: #e3e3e3;
+    border: 1px solid lightgrey;
+    cursor: pointer;
+}
+
+.shoppingCartItemQtyButton svg {
+    font-size: .8rem !important;
+}
+
+.shoppingCartItemQtyInput {
+    width: 40px;
+    text-align: center;
+    border-radius: 99px;
+    height: 24px;
+    background: #f5f5f5;
+    border: 1px solid lightgrey;
+}
+
+.shoppingCartItemQtyInput:focus {
+    outline: none;
+    border: 3px solid rgb(65, 65, 65);
 }
