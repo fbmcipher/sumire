@@ -3,6 +3,7 @@ import ShoppingCartContext from '../../contexts/ShoppingCartContext.jsx';
 import styles from './ShoppingCart.module.css';
 import { Delete, Close, Remove, Add, Shop } from '@material-ui/icons'
 import Price from '../../components/Price/Price.jsx';
+import classNames from 'classnames';
 
 const ShoppingCart = ({items}) => {
 
@@ -11,9 +12,16 @@ const ShoppingCart = ({items}) => {
 
     return (
         <ShoppingCartContext.Consumer>
-            { ({items}) => {
+            { ({items, cartVisible, setCartVisible}) => {
+
+                let hidden = (
+                    Object.keys(items).length == 0
+                        ||
+                    !cartVisible
+                );
+
                 return (
-                    <div className={styles.shoppingCart}>
+                    <div className={classNames(styles.shoppingCart, {hidden})}>
                         <ShoppingCartHeader />
                         <ShoppingCartContent items={items} />
                         <ShoppingCartFooter items={items} />
@@ -107,10 +115,11 @@ const ShoppingCartItemQtyPicker = ({item, max = 9}) => {
 }
 
 const ShoppingCartHeader = () => {
+    const { setCartVisible } = useContext(ShoppingCartContext);
     return (
         <div className={styles.shoppingCartHeader}>
             <div className={styles.shoppingCartHeaderTitle}>shopping cart</div>
-            <div className={styles.closeButtonContainer}>
+            <div onClick={()=>{setCartVisible(false)}} className={styles.closeButtonContainer}>
                 <Close />
             </div>
         </div>

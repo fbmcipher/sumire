@@ -9,6 +9,16 @@
     margin: 0 24px 32px;
     border-radius: 8px;
     box-shadow: 0px 0px 12px #2c1867a8;
+    
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.25s ease-out;
+}
+
+.shoppingCart:global(.hidden) {
+    opacity: 0;
+    transform: translateY(300px);
+    pointer-events: none;
 }
 
 .shoppingCartHeader {
@@ -175,7 +185,8 @@ button.checkout:active {
     padding: 3px;
     color: rgba(255,255,255,.8);
     transition: 0.1s linear;
-    background: rgba(0,0,0,.2)
+    background: rgba(0,0,0,.2);
+    cursor: pointer;
 }
 
 .closeButtonContainer:hover {

@@ -19,6 +19,7 @@ const ShoppingCartHandler = ({children}) => {
     
     /* init state variables */
     const [ items, setItems ] = useState({});
+    const [ cartVisible, setCartVisible ] = useState(false);
     const forceUpdate = useForceUpdate();
 
     /* helper functions */
@@ -38,6 +39,7 @@ const ShoppingCartHandler = ({children}) => {
            that existing object's qty prop. 
         */
 
+           
         if(!(item.id in items)){
             /* add it! set qty = 0, we will update it in next step */
             items[item.id] = item;
@@ -49,6 +51,8 @@ const ShoppingCartHandler = ({children}) => {
         
         /* update state var! */
         setItems(items);
+        setCartVisible(true);
+
         forceUpdate();
     }
 
@@ -86,7 +90,8 @@ const ShoppingCartHandler = ({children}) => {
     return (
         <ShoppingCartContext.Provider value={{
             /* "provides" these values & functions to all Consumers. */
-            items, setItems, addItemToCart, removeItemFromCart, calculateTotal
+            items, setItems, addItemToCart, removeItemFromCart, calculateTotal,
+            cartVisible, setCartVisible
         }}>
             <ShoppingCart items={items} />
             {children}
