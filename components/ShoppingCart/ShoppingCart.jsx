@@ -16,10 +16,24 @@ const ShoppingCart = ({items}) => {
                     <div className={styles.shoppingCart}>
                         <ShoppingCartHeader />
                         <ShoppingCartContent items={items} />
+                        <ShoppingCartFooter items={items} />
                     </div>
                 )
             } }
         </ShoppingCartContext.Consumer>
+    )
+}
+
+const ShoppingCartFooter = ({items}) => {
+    return (
+        <div className={styles.shoppingCartFooter}>
+            <div className={styles.total}>
+                total <Price currency="GBP" price={[["GBP", 4800]]} symFont={true}></Price>
+            </div>
+            <div>
+                <button onClick={()=>{alert('this button does nothing')}}className={styles.checkout}>checkout</button>
+            </div>
+        </div>
     )
 }
 

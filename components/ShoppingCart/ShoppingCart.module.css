@@ -5,16 +5,26 @@
     bottom: 0;
     background: white;
     z-index: 100000;
-    width: 326px;
+    width: 360px;
     margin: 0 24px 32px;
     border-radius: 8px;
-    box-shadow: 1px 1px 12px rgb(0 0 0 / 20%);
+    box-shadow: 0px 0px 12px #2c1867a8;
 }
 
 .shoppingCartHeader {
     background: #6e45e6;
     border-radius: 8px 8px 0 0;
     padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shoppingCartHeaderTitle {
+    font-family: 'wavehaus';
+    font-weight: 700;
+    font-size: 20px;
+    color: #ffffff;
 }
 
 .shoppingCart li {
@@ -112,4 +122,62 @@
 .shoppingCartItemQtyInput:focus {
     outline: none;
     border: 3px solid rgb(65, 65, 65);
+}
+
+.shoppingCartFooter {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    background: #6e45e6;
+    border-radius: 0 0 8px 8px;
+    padding: 12px 24px;
+}
+
+button.checkout {
+    background: hsl(323deg 100% 72%);
+    border: 0;
+    border-radius: 89px;
+    padding: 4px 14px;
+    color: white;
+    font-family: 'wavehaus';
+    font-size: 16px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 600;
+    transition: 0.1s linear;
+}
+
+button.checkout:hover {
+    background: hsl(323deg 100% 78%)
+}
+
+button.checkout:active {
+    background: hsl(323deg 36% 44%)
+}
+
+.total {
+    font-family: 'wavehaus';
+    font-weight: 700;
+    font-size: 16px;
+    color: #faf8ff;
+}
+
+.closeButtonContainer svg {
+    color: rgba(255,255,255,.8);
+    font-size: 1.2rem;
+}
+
+.closeButtonContainer {
+    border-radius: 100%;
+    display: flex;
+    padding: 3px;
+    color: rgba(255,255,255,.8);
+    transition: 0.1s linear;
+    background: rgba(0,0,0,.2)
+}
+
+.closeButtonContainer:hover {
+    background: rgba(0,0,0,.3);
 }

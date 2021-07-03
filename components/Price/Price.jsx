@@ -4,7 +4,7 @@
  *      £12.00
  */
 
-const Price = ({price, qty = 1, currency}) => {
+const Price = ({price, qty = 1, currency, symFont = false}) => {
     const priceToDisplay = price.filter(price => price[0] == currency)[0];
     const priceSymbol = '£'; // normally would be a conditional here
     
@@ -13,6 +13,11 @@ const Price = ({price, qty = 1, currency}) => {
        of pennies.
        This code does that. 1050 -> 10, 50 */
   
+    /* ... also, what's with that symFont prop???
+       turns out the font I use for display doesn't have a glyph for £.
+       so i added a prop that forces the usage of the body font (which does).
+       this is really, really stupid. */
+
     const priceValue = priceToDisplay[1] * qty;
 
     const priceMajor = Math.floor(priceValue / 100);
@@ -20,7 +25,10 @@ const Price = ({price, qty = 1, currency}) => {
 
     return (
         <span>
-            {priceSymbol}{priceMajor}.{priceMinor}
+            <span style={symFont? {
+                fontFamily: 'GT Walsheim',
+                fontWeight: 600
+            } : null}>{priceSymbol}</span>{priceMajor}.{priceMinor}
         </span>
     )
 };
