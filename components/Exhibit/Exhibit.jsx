@@ -1,5 +1,6 @@
 import exhibitStyles from './Exhibit.module.css';
 import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 
 export default function Exhibit({exhibit, children, styles, className}){
     /**
@@ -23,6 +24,7 @@ export default function Exhibit({exhibit, children, styles, className}){
 
     return (
         <div ref={exhibitContainerRef} className={`${exhibitStyles.exhibit_container} ${styles ? styles.exhibit_container : null} ${className ? className : null}`} onWheel={onWheel}>
+            <Link href="/"><h1>TO HOME</h1></Link>
             {children}
         </div>
     )

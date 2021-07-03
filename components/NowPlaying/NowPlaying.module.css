@@ -43,19 +43,14 @@
 
 .trackSeek input {
     /* i couldn't figure out a clean way of customising the range element
-    (shockingly) so it's gonna stay like this
+    (shockingly). so it's gonna stay like this.
     luckily all modern browsers have decided on a similar shade of blue for the
     range element :p
     (in a production build i might've actually built a proper component for this)
     */
     width: 100%;
     border-radius: 100px;
-    filter: hue-rotate(85deg);
-}
-
-.trackSeek input::-webkit-slider-thumb {
-    appearance: none;
-    background: red;
+    filter: hue-rotate(85deg) saturate(0.6) brightness(1.6)
 }
 
 /* Track controls */
