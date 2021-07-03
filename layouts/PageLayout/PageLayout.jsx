@@ -2,17 +2,19 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import styles from './PageLayout.module.css';
 import TopBar from '../../components/TopBar/TopBar.jsx';
-import AudioHandler from '../../components/AudioHandler/AudioHandler.jsx';
 
-/* Use a Context to keep track of what is being played throughout the application.
-   By default, we aren't playing anything, so set it to a JS object with playing: false */
-import AudioContext from '../../contexts/AudioContext.jsx';
+/** This component handles the Audio Context (keeping track of playback across
+ *  pages/components) and the Now Playing view */
+import AudioHandler from '../../components/AudioHandler/AudioHandler.jsx';
 
 /** Use another context to keep track of all mock data used in this prototype.
  *  This would be replaced with actual API response data in a release build.
  */
 import DataContext from '../../contexts/DataContext.jsx';
 
+/* Import ShoppingCartHandler (which manages shopping cart state and displays
+   ShoppingCart component on all pages.) */
+import ShoppingCartHandler from '../../components/ShoppingCartHandler/ShoppingCartHandler';
 
 export default ({children, className}) => {
     /** begin mock data */
@@ -99,15 +101,17 @@ export default ({children, className}) => {
 
     return (
         <DataContext.Provider value={data}>
-            <AudioHandler>
-                <div id="sumire">
+            <ShoppingCartHandler>
+                <AudioHandler>
+                    <div id="sumire">
 
-                    <div className={`${styles.layout} ${className ? className : ''}`}>
-                        <TopBar />
-                        {children}
+                        <div className={`${styles.layout} ${className ? className : ''}`}>
+                            <TopBar />
+                            {children}
+                        </div>
                     </div>
-                </div>
-            </AudioHandler>
+                </AudioHandler>
+            </ShoppingCartHandler>
         </DataContext.Provider>
     )
 }

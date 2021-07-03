@@ -4,15 +4,20 @@
 import Head from 'next/head'  // i.e. <head> element
 
 /* dependencies */
+import { useContext, useState } from 'react';
 import classNames from 'classnames';
 
 /* components */
 import Exhibit from '../../../components/Exhibit/Exhibit.jsx';
 import { ResponsiveStack, ResponsiveStackChild } from '../../../components/ResponsiveStack/ResponsiveStack.jsx';
 import ImageHotspots from 'react-image-hotspots';
+
 /* styles */
 import styles from './index.module.css';
 import exhibitStyles from './Exhibit.module.css';
+
+/* contexts */
+import ShoppingCartContext from '../../../contexts/ShoppingCartContext.jsx';
 
 /* Product component (used only with this exhibition) */
 const Product = ({product, light}) => {
@@ -29,6 +34,14 @@ const Product = ({product, light}) => {
   In this demo assignment we only care about GBP prices.
   Just trying to futureproof a bit :)
   */
+
+  /* get addItemToCart function from ShoppingCartHandler via ShoppingCartContext */
+  const { addItemToCart } = useContext(ShoppingCartContext);
+
+  const onClick = ()=>{
+    /* When click, add item to cart */
+    addItemToCart(product);
+  }
 
   const priceToDisplay = product.price.filter(price => price[0] == "GBP")[0];
   const priceSymbol = '£'; // normally would be a conditional here
@@ -66,7 +79,7 @@ const Product = ({product, light}) => {
         </div>
 
         <div>
-          <button className={styles.addToCart}>Add to Cart</button>
+          <button onClick={onClick} className={styles.addToCart}>Add to Cart</button>
         </div>
       
       </div>
