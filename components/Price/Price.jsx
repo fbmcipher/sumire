@@ -4,7 +4,7 @@
  *      £12.00
  */
 
-const Price = ({price, currency}) => {
+const Price = ({price, qty = 1, currency}) => {
     const priceToDisplay = price.filter(price => price[0] == currency)[0];
     const priceSymbol = '£'; // normally would be a conditional here
     
@@ -13,8 +13,10 @@ const Price = ({price, currency}) => {
        of pennies.
        This code does that. 1050 -> 10, 50 */
   
-    const priceMajor = Math.floor(priceToDisplay[1] / 100);
-    const priceMinor = String(priceToDisplay[1] % 100).padStart(2, '0')
+    const priceValue = priceToDisplay[1] * qty;
+
+    const priceMajor = Math.floor(priceValue / 100);
+    const priceMinor = String(priceValue % 100).padStart(2, '0')
 
     return (
         <span>

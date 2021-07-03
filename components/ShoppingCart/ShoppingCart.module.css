@@ -91,13 +91,22 @@
     font-size: .8rem !important;
 }
 
-.shoppingCartItemQtyInput {
+.shoppingCartItemQtyButton:disabled {
+    opacity: .5;
+}
+
+.shoppingCartItemQtyValue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: GT Walsheim;
     width: 40px;
     text-align: center;
     border-radius: 99px;
     height: 24px;
     background: #f5f5f5;
     border: 1px solid lightgrey;
+    user-select: none;
 }
 
 .shoppingCartItemQtyInput:focus {

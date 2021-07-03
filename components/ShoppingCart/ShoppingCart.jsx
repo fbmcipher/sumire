@@ -1,12 +1,13 @@
 import { useContext, useState, useRef } from 'react';
 import ShoppingCartContext from '../../contexts/ShoppingCartContext.jsx';
 import styles from './ShoppingCart.module.css';
-import { Delete, Close, Remove, Add } from '@material-ui/icons'
+import { Delete, Close, Remove, Add, Shop } from '@material-ui/icons'
 import Price from '../../components/Price/Price.jsx';
 
 const ShoppingCart = ({items}) => {
 
     console.log({items});
+    const ctx = useContext(ShoppingCartContext);
 
     return (
         <ShoppingCartContext.Consumer>
@@ -38,6 +39,8 @@ const ShoppingCartContent = ({items}) => {
 }
 
 const ShoppingCartItem = ({item, key}) => {
+    const { removeItemFromCart } = useContext(ShoppingCartContext);
+
     return (
         <li key={key}>
             <div className={styles.shoppingCartItem}>
@@ -48,13 +51,13 @@ const ShoppingCartItem = ({item, key}) => {
                 <div className={styles.shoppingCartItemInfo}> 
                     <div className={styles.shoppingCartItemTitle}>{item.title}</div>
                     <div className={styles.shoppingCartItemPrice}>
-                        <Price price={item.price} currency={"GBP"} />
+                        <Price price={item.price} qty={item.qty} currency={"GBP"} />
                     </div>
                 </div>
 
-                <ShoppingCartItemQtyPicker item={item} />
+                <ShoppingCartItemQtyPicker item={item} max={9} />
 
-                <div className={styles.deleteContainer}>
+                <div className={styles.deleteContainer} onClick={() => {removeItemFromCart(item)}}>
                     <Delete fontSize={"small"} />
                 </div>
             </div>
@@ -62,12 +65,27 @@ const ShoppingCartItem = ({item, key}) => {
     )
 }
 
-const ShoppingCartItemQtyPicker = ({item}) => {
+const ShoppingCartItemQtyPicker = ({item, max = 9}) => {
+    const { addItemToCart } = useContext(ShoppingCartContext);
+
+    const increment = () => {
+        /* Add another instance to the cart. */
+        addItemToCart(item, 1);
+    }
+
+    const decrement = () => {
+        /* Remove an instance from the cart. We still use addItemToCart,
+           but just set qty to -1 */
+        addItemToCart(item, -1);
+    }
+
     return (
         <div className={styles.shoppingCartItemQty}>
-            <button className={styles.shoppingCartItemQtyButton}><Remove /></button>
-            <input className={styles.shoppingCartItemQtyInput} value={item.qty} />
-            <button className={styles.shoppingCartItemQtyButton}><Add /></button>
+            <button disabled={item.qty <= 1} onClick={decrement} className={styles.shoppingCartItemQtyButton}><Remove /></button>
+            <div className={styles.shoppingCartItemQtyValue}>
+                {item.qty}
+            </div>
+            <button disabled={item.qty >= max} onClick={increment} className={styles.shoppingCartItemQtyButton}><Add /></button>
         </div>
     )
 }

@@ -7,13 +7,20 @@ import ShoppingCartContext from '../../contexts/ShoppingCartContext.jsx';
 import ShoppingCart from '../../components/ShoppingCart/ShoppingCart.jsx';
 import { useState, useContext } from 'react';
 
+/* this hook allows us to force a rerender */
+function useForceUpdate(){
+    const [value, setValue] = useState(0); // integer state
+    return () => setValue(value => value + 1); // update the state to force render
+}
+
 const ShoppingCartHandler = ({children}) => {
     /* This component is invisible, and is mounted on PageLayout so it is
        always accessible */
     
     /* init state variables */
     const [ items, setItems ] = useState({});
-    
+    const forceUpdate = useForceUpdate();
+
     /* helper functions */
     const addItemToCart = (item, qty=1) => {
         /** Add an item to the cart! 
@@ -42,7 +49,21 @@ const ShoppingCartHandler = ({children}) => {
         
         /* update state var! */
         setItems(items);
-        console.log({items});
+        forceUpdate();
+    }
+
+    const removeItemFromCart = (item) => {
+        /* Removes item from cart. Accepts either item object or item ID. */
+        let id;
+        if(item.id){
+            id = item.id
+        } else {
+            id = item;
+        }
+
+        delete(items[id]);
+        setItems(items);
+        forceUpdate();
     }
 
     /* init context */
@@ -51,7 +72,7 @@ const ShoppingCartHandler = ({children}) => {
     return (
         <ShoppingCartContext.Provider value={{
             /* "provides" these values & functions to all Consumers. */
-            items, setItems, addItemToCart
+            items, setItems, addItemToCart, removeItemFromCart
         }}>
             <ShoppingCart items={items} />
             {children}
