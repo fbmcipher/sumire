@@ -16,35 +16,41 @@ const NowPlaying = ({playing}) => {
 
     return (
         <AudioContext.Consumer>
-            { ({curTrack, audioTag}) => {
+            { ({curTrack, audioTag, visible, setVisible }) => {
                 /* Instead of passing thru track duration as a prop to progress,
                    I will manipulate the element directly using the traditional
                    DOM methods to avoid crazy number of unnecessary renders. */
-                if (!curTrack) return null;
+                let hidden = (
+                    !curTrack || !visible
+                )
 
                 return (
-                    <div className={styles.nowPlaying}>
-                        <div className={styles.trackInfo}>
-                        
-                            <div className={styles.trackArt}>
-                                <Image src={curTrack.imageSrc} height={64} width={64} />
-                            </div>
+                    <div className={classNames(styles.nowPlaying, { hidden })}>
+                        {curTrack ? (
+                        <>
+                            <div className={styles.trackInfo}>
 
-                            <div className={styles.trackText}>
-                                <div className={styles.trackTitle}>{curTrack.title}</div>
-                                <div className={styles.trackArtists}>
-                                    <Artists artists={curTrack.artists} />
+                                <div className={styles.trackArt}>
+                                    <Image src={curTrack.imageSrc} height={64} width={64} />
                                 </div>
-                            </div>
 
-                        </div>
-                        
-                        <div className={styles.trackSeek}>
-                            <SeekBar audioTag={audioTag} />
-                        </div>
-                        <div className={styles.trackControls}>
-                            <TrackControls audioTag={audioTag} />
-                        </div>
+                                <div className={styles.trackText}>
+                                    <div className={styles.trackTitle}>{curTrack.title}</div>
+                                    <div className={styles.trackArtists}>
+                                        <Artists artists={curTrack.artists} />
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+                            <div className={styles.trackSeek}>
+                                <SeekBar audioTag={audioTag} />
+                            </div>
+                            <div className={styles.trackControls}>
+                                <TrackControls audioTag={audioTag} />
+                            </div>
+                        </>
+                        ): null}
                     </div>
                 )
             } }

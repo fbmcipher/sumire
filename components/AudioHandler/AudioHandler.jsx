@@ -3,6 +3,7 @@
 
 import { useContext, useEffect, useRef, useState } from "react";
 import NowPlaying from '../../components/NowPlaying/NowPlaying.jsx';
+import NowPlayingMini from '../../components/NowPlayingMini/NowPlayingMini.jsx';
 
 /* Use a Context to keep track of what is being played throughout the application.
    By default, we aren't playing anything, so set it to a JS object with playing: false */
@@ -20,11 +21,13 @@ const AudioHandler = props => {
        queue, setQueue           — manage queue array
        playingIdx, setPlayingIdx — currently playing index in queue
        curTrack, setCurTrack       - current track object
+       visible, setVisible         - is now playing widget visible?
     */
    
     const [ queue, setQueue ] = useState([]);
     const [ playingIdx, setPlayingIdx ] = useState(null);
     const [ curTrack, setCurTrack ] = useState(null);
+    const [ visible, setVisible ] = useState(false);
 
     /* Init context */
     const ctx = useContext(AudioContext);
@@ -68,8 +71,9 @@ const AudioHandler = props => {
     return (
         <AudioContext.Provider value={{
             queue, setQueue, playingIdx, setPlayingIdx, curTrack, setCurTrack,
-            audioTag
+            audioTag, visible, setVisible
         }}>
+            <NowPlayingMini />
             <NowPlaying />
             <audio ref={audioTag}></audio>
             {props.children}
