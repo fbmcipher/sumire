@@ -62,6 +62,7 @@ const AudioHandler = props => {
         skipped, etc.) or if the queue changed (new album is being played, new
         track, etc.) */
     useEffect(()=>{
+        setVisible(true);
         if(playingIdx in queue){
             setCurTrack(queue[playingIdx]);
             playAudioFile(queue[playingIdx].src);

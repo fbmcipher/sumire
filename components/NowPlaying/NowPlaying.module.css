@@ -19,6 +19,12 @@
     transition: 0.25s ease-out;
 }
 
+.nowPlaying:global(.hidden) {
+    opacity: 0;
+    transform: translateY(300px);
+    pointer-events: none;
+}
+
 .trackInfo {
     display: flex;
     align-items: center;

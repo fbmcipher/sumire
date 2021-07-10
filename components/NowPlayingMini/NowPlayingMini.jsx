@@ -6,9 +6,14 @@
  import { PlayArrow } from '@material-ui/icons'
  import { useContext } from "react";
  import classNames from 'classnames';
+import AudioContext from '../../contexts/AudioContext';
  
- const NowPlayingMini = ({setVisible}) => {
-     let hidden = false;
+ const NowPlayingMini = () => {
+     const { visible, setVisible, curTrack } = useContext(AudioContext);
+
+     /* Only show mini now-playing widget if audio is playing, and if the larger widget is
+        hidden */
+     let hidden = !(curTrack && !visible);
  
      return (
          <div onClick={()=>{setVisible(true)}} className={classNames(styles.nowPlayingMini, {hidden})}>
