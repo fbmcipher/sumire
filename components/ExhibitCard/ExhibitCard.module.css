@@ -19,6 +19,13 @@
     cursor: pointer;
 }
 
+@media (max-width: 1000px){
+    .exhibit_card {
+        width: 98%;
+        height: 500px;
+    }
+}
+
 .exhibit_info {
     position: absolute;
     top: 0;

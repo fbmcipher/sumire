@@ -3,6 +3,10 @@
     /* Fill up the entire container so that the carousel can. */
     height: 100%;
     position: relative;
+
+    overflow-x: scroll;
+    max-width: 100vw;
+    white-space: nowrap;
 }
 
 .carousel {
@@ -11,6 +15,18 @@
     gap: 64px;
     padding: 24px 0;
     align-items: center;
+}
+
+@media (max-width: 1000px){
+    /* At this breakpoint, scrolling becomes vertical */
+    .carouselContainer {
+        height: unset;
+        overflow: hidden; /* let container handle overflow instead */
+    }
+    .carousel {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .carouselContainer::-webkit-scrollbar {
@@ -39,11 +55,4 @@
 
 .carouselContainer::-webkit-scrollbar-thumb:active {
     background: rgb(161, 51, 119);
-}
-
-
-.carouselContainer {
-    overflow-x: scroll;
-    max-width: 100vw;
-    white-space: nowrap;
 }
