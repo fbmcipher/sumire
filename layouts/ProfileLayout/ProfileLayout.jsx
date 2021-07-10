@@ -14,6 +14,7 @@
  import ExhibitCard from '../../components/ExhibitCard/ExhibitCard.jsx';
  import Members from '../../components/Members/Members.jsx';
  import Image from 'next/image';
+ import { useMediaQuery } from 'react-responsive';
 
  /* We use Next.js's router object to identify the profile
     page to display. */
@@ -29,6 +30,8 @@
  }
 
  const ProfileLayoutContent = ({children}) => {
+    const isMobile = useMediaQuery({query: '(max-width: 1000px)'});
+
     /* This is the component that actually does all the
     heavy lifting. I had to split it because only child
     components of PageLayout can access DataContext. */
@@ -53,6 +56,11 @@
             :
         null}
         
+        {isMobile ? 
+        <header className={istyles.headerMobile}>
+            <Members active={currentUsername} members={members} />
+        </header>
+        : null }
 
         <main className={istyles.main}>
         <Carousel>
@@ -74,9 +82,12 @@
         </Carousel>
         </main>
 
+        {isMobile ? null: 
         <footer className={istyles.footer}>
             <Members active={currentUsername} members={members} />
         </footer>
+        }
+
         </>
      )
  }

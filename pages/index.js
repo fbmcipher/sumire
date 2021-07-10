@@ -10,8 +10,10 @@ import BackgroundAnimation from '../components/BackgroundAnimation/BackgroundAni
 import ExhibitCard from '../components/ExhibitCard/ExhibitCard.jsx';
 import DataContext from '../contexts/DataContext.jsx';
 import { useContext } from 'react'
+import { useMediaQuery } from 'react-responsive';
 
 const Home = ()=>{
+  const isMobile = useMediaQuery({query: '(max-width: 1000px)'});
   const {members, exhibits} = useContext(DataContext);
   return (
     <>
@@ -23,6 +25,12 @@ const Home = ()=>{
 
       <BackgroundAnimation />
 
+      {isMobile ? 
+      <header className={styles.headerMobile}>
+        <Members members={members} />
+      </header>
+      : null }
+
       <main className={styles.main}>
         <Carousel>
           {exhibits.map(exhibit => {
@@ -31,10 +39,12 @@ const Home = ()=>{
           }
         </Carousel>
       </main>
-
+      
+      {isMobile ? null: 
       <footer className={styles.footer}>
         <Members members={members} />
       </footer>
+      }
     </>
   )
 }
