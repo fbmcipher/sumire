@@ -3,7 +3,7 @@ import AudioContext from '../../contexts/AudioContext.jsx';
 import Artists from '../../components/Artists/Artists.jsx';
 import styles from './NowPlaying.module.css';
 import classNames from 'classnames';
-import { PlayArrow, Pause, FastRewind, FastForward } from '@material-ui/icons';
+import { PlayArrow, Pause, FastRewind, FastForward, Close } from '@material-ui/icons';
 import Image from 'next/image';
 
 /* this hook allows us to force a rerender */
@@ -28,6 +28,10 @@ const NowPlaying = ({playing}) => {
                     <div className={classNames(styles.nowPlaying, { hidden })}>
                         {curTrack ? (
                         <>
+                            <div onClick={()=>{setVisible(false)}} className={styles.closeButtonContainer}>
+                                <Close />
+                            </div>
+
                             <div className={styles.trackInfo}>
 
                                 <div className={styles.trackArt}>

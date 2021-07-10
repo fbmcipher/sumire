@@ -7,6 +7,7 @@ import ShoppingCartContext from '../../contexts/ShoppingCartContext.jsx';
 import ShoppingCart from '../../components/ShoppingCart/ShoppingCart.jsx';
 import ShoppingCartMini from '../../components/ShoppingCartMini/ShoppingCartMini.jsx';
 import { useState, useContext } from 'react';
+import { Router } from "next/router";
 
 /* this hook allows us to force a rerender */
 function useForceUpdate(){
@@ -87,6 +88,11 @@ const ShoppingCartHandler = ({children}) => {
 
     /* init context */
     const ctx = useContext(ShoppingCartContext);
+
+    /* Create router event - so that when page changes, NowPlaying is hidden automatically */
+    Router.events.on('routeChangeComplete', url => {
+        setCartVisible(false);
+    })
 
     return (
         <ShoppingCartContext.Provider value={{

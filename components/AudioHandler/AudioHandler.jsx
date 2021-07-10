@@ -2,6 +2,7 @@
    Used to play music for e.g. albums. */
 
 import { useContext, useEffect, useRef, useState } from "react";
+import { Router } from "next/router";
 import NowPlaying from '../../components/NowPlaying/NowPlaying.jsx';
 import NowPlayingMini from '../../components/NowPlayingMini/NowPlayingMini.jsx';
 
@@ -68,6 +69,11 @@ const AudioHandler = props => {
             playAudioFile(queue[playingIdx].src);
         }
     }, [playingIdx, queue])
+
+    /* Create router event - so that when page changes, NowPlaying is hidden automatically */
+    Router.events.on('routeChangeComplete', url => {
+        setVisible(false);
+    })
 
     return (
         <AudioContext.Provider value={{
