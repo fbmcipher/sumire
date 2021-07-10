@@ -33,6 +33,35 @@
 
 .logomark {
     margin: 0 0 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.logoImage {
+    position: relative;
+    left: -38px;
+}
+
+:global(.showBackIcon) .logoImage {
+    left: 0;
+}
+
+.logomark img {
+    cursor: pointer;
+}
+
+.logomark svg {
+    /* back icon (*/
+    opacity: 0;
+    fill: hsl(323deg 100% 72%);
+    margin: 0 8px 0 0;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+}
+
+:global(.showBackIcon).logomark svg {
+    opacity: 1;
 }
 
 .typemark {
@@ -41,7 +70,7 @@
 
 @media (min-width: 1440px){
     /* 1440px and greater */
-    .logomark {
+    .logomark img {
         width: 96px;
         height: 96px
     }
@@ -76,7 +105,7 @@
         margin: 0 0 5px 16px;
     }
 
-    .logomark {
+    .logomark img {
         width: 96px;
         height: 96px;
     }
@@ -92,7 +121,7 @@
         margin: 8px 0 0 0;
     }
 
-    .logomark {
+    .logomark img {
         width: 96px;
         height: 96px;
     }

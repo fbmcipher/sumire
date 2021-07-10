@@ -31,3 +31,17 @@ footer {
 button {
   cursor: pointer;
 }
+
+/* utility classes */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
