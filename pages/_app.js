@@ -14,7 +14,7 @@
 import '../styles/reset.css'; /* CSS reset file */
 import '../styles/pages/haidernism.css'
 import '../styles/pages/tiabn.css'
-import '../styles/fonts/wavehaus.css';
+import '../styles/fonts/Wavehaus.css';
 import '../styles/fonts/GTWalsheim.css';
 import '../styles/globals.css';
 import PageLayout from '../layouts/PageLayout/PageLayout.jsx';
