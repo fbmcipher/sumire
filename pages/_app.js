@@ -20,6 +20,7 @@ import '../styles/globals.css';
 import PageLayout from '../layouts/PageLayout/PageLayout.jsx';
 import CarouselLayout from '../layouts/CarouselLayout/CarouselLayout.jsx'
 import ProfileLayout from '../layouts/ProfileLayout/ProfileLayout.jsx';
+import BackgroundAnimation from '../components/BackgroundAnimation/BackgroundAnimation.jsx';
 
 let layouts = {
   PageLayout,
@@ -118,6 +119,7 @@ const App = ({ Component, pageProps }) => {
     <DataContext.Provider value={data}>
       <ShoppingCartHandler>
         <AudioHandler>
+          <BackgroundAnimation />
           <Layout>
             <Component {...pageProps} />
           </Layout>

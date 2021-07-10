@@ -8,9 +8,14 @@
     z-index: 1;
 }
 
+.topbarSectionLeft {
+    z-index: 1;
+}
+
 .topbarSectionRight {
     display: flex;
     align-items: center;
+    z-index: 1;
 }
 
 /* logo styles */

@@ -60,6 +60,11 @@
     overflow-y: hidden;
 }
 
+.membersContainer::-webkit-scrollbar {
+    /* hide scroll bar but still scroll */
+    height: 0; width: 0; background:transparent;
+}
+
 .members {
     display: inline-flex;
     justify-content: flex-start;

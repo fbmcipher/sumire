@@ -59,7 +59,6 @@ const TopBarLinks = props => {
         <nav className={styles.links}>
             <ol>
                 <TopBarLink href="/about">about</TopBarLink>
-                <TopBarLink href="/shop">shop</TopBarLink>
             </ol>
         </nav>
     )
