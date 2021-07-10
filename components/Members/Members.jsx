@@ -2,7 +2,15 @@ import styles from './Members.module.css';
 import Image from 'next/image'
 import Link from 'next/link'
 
-const Members = ({members, active})=>{
+const MembersContainer = ({members, active}) => {
+    return (
+        <div className={styles.membersContainer}>
+            <MembersContent members={members} active={active} />
+        </div>
+    )
+}
+
+const MembersContent = ({members, active})=>{
     return (
         <div className={styles.members}>
             {members.map((member, i) => {
@@ -26,4 +34,4 @@ const Member = ({member, isActive}) => {
     )
 };
 
-export default Members;
+export default MembersContainer;
