@@ -9,3 +9,16 @@
     height: 100%;
     display: inline-block;
 }
+
+@media (max-width: 1000px){
+    .responsiveStack {
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+    }
+
+    .responsiveStackChild {
+        height: unset;
+        width: 100%;
+    }
+}
