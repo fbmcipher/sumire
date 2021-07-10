@@ -25,36 +25,38 @@ const NowPlaying = ({playing}) => {
                 )
 
                 return (
-                    <div className={classNames(styles.nowPlaying, { hidden })}>
-                        {curTrack ? (
-                        <>
-                            <div onClick={()=>{setVisible(false)}} className={styles.closeButtonContainer}>
-                                <Close />
-                            </div>
-
-                            <div className={styles.trackInfo}>
-
-                                <div className={styles.trackArt}>
-                                    <Image src={curTrack.imageSrc} height={64} width={64} />
+                    <div className={classNames(styles.nowPlayingContainer, { hidden })}>
+                        <div className={styles.nowPlaying}>
+                            {curTrack ? (
+                            <>
+                                <div onClick={()=>{setVisible(false)}} className={styles.closeButtonContainer}>
+                                    <Close />
                                 </div>
 
-                                <div className={styles.trackText}>
-                                    <div className={styles.trackTitle}>{curTrack.title}</div>
-                                    <div className={styles.trackArtists}>
-                                        <Artists artists={curTrack.artists} />
+                                <div className={styles.trackInfo}>
+
+                                    <div className={styles.trackArt}>
+                                        <Image src={curTrack.imageSrc} height={64} width={64} />
                                     </div>
-                                </div>
 
-                            </div>
-                            
-                            <div className={styles.trackSeek}>
-                                <SeekBar audioTag={audioTag} />
-                            </div>
-                            <div className={styles.trackControls}>
-                                <TrackControls audioTag={audioTag} />
-                            </div>
-                        </>
-                        ): null}
+                                    <div className={styles.trackText}>
+                                        <div className={styles.trackTitle}>{curTrack.title}</div>
+                                        <div className={styles.trackArtists}>
+                                            <Artists artists={curTrack.artists} />
+                                        </div>
+                                    </div>
+
+                                </div>
+                                
+                                <div className={styles.trackSeek}>
+                                    <SeekBar audioTag={audioTag} />
+                                </div>
+                                <div className={styles.trackControls}>
+                                    <TrackControls audioTag={audioTag} />
+                                </div>
+                            </>
+                            ): null}
+                        </div>
                     </div>
                 )
             } }
