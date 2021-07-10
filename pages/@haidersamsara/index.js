@@ -1,4 +1,4 @@
-/* This is a stub Component that represents @haidersamsara's
+/* This is a stub Component that represents this members
    profile page.
 
    We could do a fully custom profile page if we so chose,

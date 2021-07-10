@@ -165,7 +165,7 @@ export default function Fruity() {
 
             {/* Products list */}
             <ResponsiveStackChild className={styles.products}>
-              {products.map(product => <Product product={product} />)}
+              {products.map(product => <Product key={product.id} product={product} />)}
             </ResponsiveStackChild>
             
           </ResponsiveStack>

@@ -31,7 +31,7 @@ const Home = ()=>{
       <main className={styles.main}>
         <Carousel>
           {exhibits.map(exhibit => {
-            return <ExhibitCard exhibit={exhibit} />
+            return <ExhibitCard key={exhibit.slug} exhibit={exhibit} />
           })
           }
         </Carousel>
