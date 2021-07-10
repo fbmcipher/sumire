@@ -5,6 +5,7 @@ import styles from './TopBar.module.css';
 import logoSrc from './img/logo.png';
 import classNames from 'classnames';
 import { useRouter } from 'next/router';
+import { ArrowBack } from '@material-ui/icons'
 
 const TopBar = props => {
     /**
@@ -83,11 +84,18 @@ const TopBarLogo = props => {
      * This component renders the Sumire logo and the "made by sumire" text.
      */
 
+     const { pathname } = useRouter();
+
+    let showBackIcon = (pathname != '/')
+
     return (
         <Link href="/">
             <div className={styles.logoContainer}>
-                <div className={styles.logomark}>
-                    <Image src={logoSrc} alt="sumire logo" width={144} height={144} />
+                <div className={classNames(styles.logomark, { showBackIcon })}>
+                    <ArrowBack />
+                    <div className={styles.logoImage}>
+                        <Image src={logoSrc} alt="sumire logo" width={144} height={144} />
+                    </div>
                 </div>
                 <div className={styles.typemark}>made by sumire</div>
             </div>
