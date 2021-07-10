@@ -21,10 +21,12 @@ const ShoppingCart = ({items}) => {
                 );
 
                 return (
-                    <div className={classNames(styles.shoppingCart, {hidden})}>
-                        <ShoppingCartHeader />
-                        <ShoppingCartContent items={items} />
-                        <ShoppingCartFooter items={items} />
+                    <div className={classNames(styles.shoppingCartContainer, {hidden})}>
+                        <div className={classNames(styles.shoppingCart)}>
+                            <ShoppingCartHeader />
+                            <ShoppingCartContent items={items} />
+                            <ShoppingCartFooter items={items} />
+                        </div>
                     </div>
                 )
             } }
