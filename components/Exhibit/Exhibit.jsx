@@ -32,7 +32,7 @@ export default function Exhibit({exhibit, children, styles, className}){
         <div ref={exhibitContainerRef} className={`${exhibitStyles.exhibit_container} ${styles ? styles.exhibit_container : null} ${className ? className : null}`} onWheel={onWheel}>
 
             <BackButton
-                className={styles.backButton}
+                className={exhibitStyles.backButton}
                 onClick={back}
             />
 

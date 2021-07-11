@@ -1,4 +1,5 @@
 import { useContext, useState, useRef } from 'react';
+import Image from 'next/image';
 import ShoppingCartContext from '../../contexts/ShoppingCartContext.jsx';
 import styles from './ShoppingCart.module.css';
 import { Delete, Close, Remove, Add, Shop } from '@material-ui/icons'
@@ -71,7 +72,7 @@ const ShoppingCartItem = ({item, key}) => {
         <li key={key}>
             <div className={styles.shoppingCartItem}>
                 <div className={styles.shoppingCartItemImage}>
-                    <img src={item.imgSrc} />
+                    <Image height={48} width={48} src={item.imgSrc} />
                 </div>
 
                 <div className={styles.shoppingCartItemInfo}> 

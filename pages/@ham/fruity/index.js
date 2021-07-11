@@ -2,6 +2,7 @@
  *  Exhibit page. */
 
 import Head from 'next/head'  // i.e. <head> element
+import Image from 'next/image';
 
 /* dependencies */
 import { useContext, useState } from 'react';
@@ -85,7 +86,7 @@ const Product = ({product, light}) => {
       </div>
 
     </div>
-    <img src={product.imgSrc} />
+    <Image layout="fill" src={product.imgSrc} />
   </ResponsiveStackChild>
 }
 

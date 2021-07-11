@@ -3,6 +3,7 @@ import { useResizeDetector } from 'react-resize-detector';
 import styles from './ExhibitCard.module.css';
 import Artists from '../Artists/Artists.jsx';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useMediaQuery } from 'react-responsive';
 
 const ExhibitCard = ({exhibit, focussed}) => {
@@ -56,12 +57,10 @@ const ExhibitCard = ({exhibit, focussed}) => {
             <div
             ref={ref}
             className={styles.exhibit_card}
-            style={{
-                backgroundImage: `url(${exhibit.imageSrc})`,
-                ...squareProps
-            }}
+            style={squareProps}
             id={exhibit.slug}
         >
+            <Image className={styles.exhibit_background} src={exhibit.imageSrc} layout="fill" />   
             {/* Vignette makes text more readable on light bgs */}
             {/* Only display if focussed */}
             <div 
