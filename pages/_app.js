@@ -34,33 +34,33 @@ const App = ({ Component, pageProps }) => {
   const members = [
     {
         name: 'faiz',
-        imageSrc: 'https://via.placeholder.com/150x150',
+        imageSrc: '/artists/faiz/pic.jpg',
         username: 'faiz'
     },
     {
         name: 'HAIDER SAMSARA',
-        imageSrc: 'https://assets.cosy.land/images/2021/02/HD26.jpg',
+        imageSrc: '/artists/haidersamsara/pic.jpg',
         backgroundSrc: '/artists/haidersamsara/bg.jpg',
         username: 'haidersamsara'
     },
     {
         name: 'Caracara',
-        imageSrc: 'https://via.placeholder.com/150x150',
+        imageSrc: '/artists/caracara/pic.jpg',
         username: 'caracara',
     },
     {
         name: 'pier_ogii',
-        imageSrc: 'https://via.placeholder.com/150x150',
+        imageSrc: '/artists/pier_ogii/pic.jpg',
         username: 'pier_ogii'
     },
     {
         name: 'pjd.',
-        imageSrc: 'https://via.placeholder.com/150x150',
+        imageSrc: '/artists/pjd/pic.jpg',
         username: 'pjd'
     },
     {
         name: 'HAM',
-        imageSrc: 'https://via.placeholder.com/150x150',
+        imageSrc: '/artists/ham/pic.jpg',
         username: 'ham'
     }
   ]
