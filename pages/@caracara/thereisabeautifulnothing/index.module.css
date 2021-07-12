@@ -1,74 +1,17 @@
-.redCard {
-    display: inline-block;
-    padding: 8px 12px;
-    background: rgb(195, 1, 0);
+.banner {
+    width: 260px;
+    height: 100vh;
+    background-image: url(img/banner-nologo-v.jpg);
+    background-size: contain;
+    background-position: center center;
 }
 
-.titleSmaller {
-    margin: 1em 0;
-}
-
-.titleBigger {
-    font-size: 48px; 
-}
-
-.firstSection {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.releaseCredits {
-    width: 500px;
-}
-
-.releaseFeatures {
-    width: 650px;
-    margin-top: 16px;
-}
-
-.trackSection {
-    display: inline-flex;
-    min-width: 100vw;
-    min-height: 100%;
-    max-height: 100%;
-    background: red;
-}
-
-.lyricsCard {
-    display: block;
-    margin: 20px;
-    width: 400px;
-    font-size: 15px;
-    color: white;
-    letter-spacing: 1.2px;
-    font-weight: 900;
-}
-
-.lyricsCard p {
-    margin-bottom: 1px;
-}
-
-.trackSectionHeader {
-    
-}
-
-.lyricsGrid {
-    display: grid; 
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      ". . . . . . . . . . . . . . ."
-      ". . . . . . . . . . . . . . ."
-      ". . . . . . . . . . . . . . ."
-      ". . . . . . . . . . . . . . ."
-      ". . . . . . . . . . . . . . ."
-      ". . . . . . . . . . . . . . ."
-      ". . . . . . . . . . . . . . ."
-      ". . . . . . . . . . . . . . ."
-      ". . . . . . . . . . . . . . ."
-      ". . . . . . . . . . . . . . ."
-      ". . . . . . . . . . . . . . ."; 
+@media (max-width: 1000px){
+    .banner {
+        width: 100vw;
+        height: 260px;
+        background-image: url(img/banner-nologo-h.jpg);
+        background-size: contain;
+        background-position: center center;
+    }
 }

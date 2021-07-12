@@ -3,7 +3,6 @@ import { css } from '@emotion/react'
 
 import Track from '../../../classes/Track.js';
 import Head from 'next/head'
-import Image from 'next/image'
 
 import Exhibit from '../../../components/Exhibit/Exhibit.jsx';
 import AudioTrackPlaylist from '../../../components/AudioTrackPlaylist/AudioTrackPlaylist.jsx';
@@ -17,8 +16,8 @@ import customPlaylistStyles from './AudioTrackPlaylist.module.css';
 import customExhibitStyles from './Exhibit.module.css';
 import exhibitStyles from '../../../components/Exhibit/Exhibit.module.css';
 
-import bannerImg from './img/banner.png';
 import styles from './index.module.css';
+import Image from 'next/image';
 
 export default function TIABN() {
   let tracks = [
@@ -172,11 +171,15 @@ export default function TIABN() {
     <div>
       <Head>
         <title>There Is A Beautiful Nothing — Caracara</title>
+        <link href="https://fonts.googleapis.com/css2?family=Benne&display=swap" rel="stylesheet"></link>
       </Head>
       <Exhibit className="exhibit-tiabn" styles={Object.assign(exhibitStyles, customExhibitStyles)}>
-        <AnimatedTexture />
         <div className="container">
-            <img className="banner" src={bannerImg.src} />
+            <div className={styles.banner}>
+                <div className={styles.logotype}>
+                    <Image src={'/pages/@caracara/thereisabeautifulnothing/img/logotype.svg'} layout='fill' />
+                </div>
+            </div>
             <div className="content">
                 <h1>There Is A Beautiful Nothing</h1>
                 <AudioTrackPlaylist styles={Object.assign(playlistStyles, customPlaylistStyles)} tracks={tracks} />
