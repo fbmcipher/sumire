@@ -1,0 +1,62 @@
+.memberPic {
+    height: 128px;
+    width: 128px;
+    border-radius: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-bottom: 16px;
+}
+
+.memberBioCard {
+    display: flex;
+    align-items: center;
+    color: white;
+    height: 100%;
+    width: 600px;
+
+    background-color: rgba(0,0,0,0.3);
+    backdrop-filter: blur(8px);
+    padding: 24px;
+}
+
+.memberName {
+    font: 700 36px Wavehaus;
+    margin-bottom: 6px;
+}
+
+.memberBio {
+    max-width: 100%;
+    white-space: normal;
+    font: 500 22px "GT Walsheim";
+    opacity: .9;
+    line-height: 1.5em;
+    margin-bottom: 24px;
+}
+
+.memberBio p {
+    margin-bottom: 12px;
+}
+
+.memberLink {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.memberLink svg {
+    font-size: 2.5rem;
+    margin-right: 8px;
+}
+
+.memberLinkUsername {
+    font-size: 20px;
+    opacity: .8;
+    text-decoration: underline;
+    transition: 0.15s linear;
+}
+
+.memberLinkUsername:hover {
+    opacity: 1;
+}

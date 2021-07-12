@@ -37,27 +37,30 @@ const App = ({ Component, pageProps }) => {
         imageSrc: '/artists/haidersamsara/pic.jpg',
         backgroundSrc: '/artists/haidersamsara/bg.jpg',
         username: 'haidersamsara',
-        bio: `HAIDER SAMSARA is a musician, visual artist, filmmaker, and a bunch of other words that don't really represent what he does and just seek to label oneself instead of actually speaking for the work he makes. He prefers the art to speak for himself, so here it is.
+        bio: `is a musician, visual artist, filmmaker, and a bunch of other words that don't really represent what he does and just seek to label oneself instead of actually speaking for the work he makes. He prefers the art to speak for himself, so here it is.
         
-        Also, he is the Editor-in-Chief and Director of [COSY](https://www.cosy.land), a multimedia magazine, and finds that a much more interesting, fulfilling pastime than plugging art.`,
+He is also the Editor-in-Chief and Director of [COSY](https://www.cosy.land), a multimedia magazine, and finds that a much more interesting, fulfilling pastime than plugging art.`,
         links: [
           {
             icon: 'Instagram',
             title: 'Instagram',
+            username: '@username',
             href: 'javascript:alert("stubbed")'
           },
           {
             icon: 'Twitter',
             title: 'Twitter',
+            username: '@username',
             href: 'javascript:alert("stubbed")'
           }
         ]
     },
     {
         name: 'Caracara',
+        name_full: 'Caracara (Samuel Hart)',
         imageSrc: '/artists/caracara/pic.jpg',
         username: 'caracara',
-        bio: `Caracara (Samuel Hart) is a musician and filmmaker. His music is ambient and textural in nature, and always carries a heavy emotional weight. In his first release, he created soundscapes that were nostalgic, extroverted and reminiscient in sound - in his new project, the opposite - cold, dark, and singular. It's a testament to his talents and intuition in music production and audio engineering that he's able to convey such a wide palette of emotion in whatever he creates.`,
+        bio: `is a musician and filmmaker. His music is ambient and textural in nature, and always carries a heavy emotional weight. In his first release, he created soundscapes that were nostalgic, extroverted and reminiscient in sound - in his new project, the opposite - cold, dark, and singular. It's a testament to his talents and intuition in music production and audio engineering that he's able to convey such a wide palette of emotion in whatever he creates.`,
         links: [
           {
             icon: 'Instagram',
@@ -73,9 +76,10 @@ const App = ({ Component, pageProps }) => {
     },
     {
         name: 'pier_ogii',
+        name_full: 'pier_ogii (Martyna)',
         imageSrc: '/artists/pier_ogii/pic.jpg',
         username: 'pier_ogii',
-        bio: `pier_ogii (Martyna) is the founder and chief aesthetic designer of [COSY](https://www.cosy.land)! She draws every single asset and infographic for COSY, creating its irresistible, iconic and universal design, and talks to writers all around the world every day to keep the cogs of COSY as a publication spinning! She also works with the rest of the COSY team in developing ideas for new features!`,
+        bio: `is the founder and chief aesthetic designer of [COSY](https://www.cosy.land)! She draws every single asset and infographic for COSY, creating its irresistible, iconic and universal design, and talks to writers all around the world every day to keep the cogs of COSY as a publication spinning! She also works with the rest of the COSY team in developing ideas for new features!`,
         links: [
           {
             icon: 'Instagram',

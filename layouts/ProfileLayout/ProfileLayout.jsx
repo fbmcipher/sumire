@@ -20,6 +20,7 @@
     page to display. */
 
  import { useRouter } from 'next/router'
+import MemberBioCard from '../../components/MemberBioCard/MemberBioCard';
 
  const ProfileLayout = ({children}) => {
      return (
@@ -71,9 +72,7 @@
                    artists array.
                 */}
                 
-                <div>
-                    <h1>foo</h1>
-                </div>
+                <MemberBioCard member={member}/>
 
                 {exhibits.filter(exhibit => {
                     let { artists } = exhibit;
