@@ -33,3 +33,8 @@ svg.explicit {
     display: flex;
     justify-content: space-between;
 }
+
+.trackTitle:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

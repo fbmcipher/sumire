@@ -6,3 +6,9 @@
     letter-spacing: 0.3em;
     font-size: 22px;
 }
+
+@media(max-width: 800px){
+    .playlist {
+        width: 100%;
+    }
+}

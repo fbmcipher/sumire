@@ -27,28 +27,6 @@ const RedCard = ({children, className}) => {
     )
 }
 
-const LyricsCard = ({children, className}) => {
-    return (
-        <RedCard className={`${styles.lyricsCard} ${className}`}>{children}</RedCard>
-    )
-}
-
-const TrackSection = ({children}) => {
-    return (
-        <div className={styles.trackSection}>
-            {children}
-        </div>
-    )
-}
-
-const LyricsGrid = ({children}) => {
-    return (
-        <div className={styles.lyricsGrid}>
-            {children}
-        </div>
-    )
-}
-
 export default function Home() {
   let tracks = [
       {
@@ -217,7 +195,11 @@ export default function Home() {
 
                 <AudioTrackPlaylist styles={Object.assign(playlistStyles, customPlaylistStyles)} tracks={tracks} />
               </ResponsiveStackChild>
-              
+
+              <ResponsiveStackChild className={styles.ytembed}>
+                <YouTubeEmbed ytid={'ShLao7Foj7Q'} showControls={false} layout='full' />
+              </ResponsiveStackChild>
+
               <ResponsiveStackChild>
                 <RedCard className={styles.releaseCredits}>
                     <p>RECORDED in SHEFFIELD, NOTTINGHAM, LONDON, and LEEDS.</p>
@@ -235,77 +217,12 @@ export default function Home() {
                 </RedCard>
               </ResponsiveStackChild>
 
-              <ResponsiveStackChild>
-                <TrackSection>
-                    <RedCard className={styles.trackSectionHeader}>
-                        <div>PRETENTIOUS</div>
-                    </RedCard>
-                    <LyricsGrid>
-                        <LyricsCard className={"lyrics__pretentious0"}>
-                            <p>FUCK A WORDSMITH, I'M A WORDSALEEM</p>
-                            <p>SINCE 97 STUNTIN' ON HYSON GREEN</p>
-                            <p>WE LIVE A LIFESTYLE BABY MADE OF BROKEN DREAMS</p>
-                            <p>IT'S THAT: "DON'T WISH BIG AND LIVE WITHIN UR MEANS"</p>
-                            <p>MY DEVILISH DESTINATION GONNA BE HELL</p>
-                            <p>SURELY GOT MY SOUL FOR SATAN SATISFIED FOR RESALE</p>
-                            <p>ALWAYS TIRED OF THE SAME OLD SHIT</p>
-                            <p>SO I'MMA MAKE THIS LIFE STRICTLY MY BUSINESS</p>
-                            <p>I MEAN...</p>
-                        </LyricsCard>
-                        <LyricsCard className={"lyrics__pretentious1"}>
-                            <p>your comments are as obtuse as the weather</p>
-                            <p>while i'm pacing erryday hell-bent for the leather</p>
-                            <p>i know u never really bother with strange folk like me</p>
-                            <p>and that's a lot to be said for this wacky paki</p>
-                            <p>'cause i'm as sharp as a knife, nank, or shank</p>
-                            <p>i'mma slash u right across ur peripheral vision</p>
-                            <p>while i'm chasing all the poltergeist, <strong><em>UGH</em></strong></p>
-                        </LyricsCard>
-                        <div className={"lyrics__pretentious2"}>
-                            <p>fool me once</p>
-                            <p>fool me --</p>
-                        </div>
-                        <LyricsCard className={"lyrics__pretentious3"}>
-                            <p>shame on you cause i can't fall for your shit</p>
-                            <p>i'm the messiah u persist in following</p>
-                            <p>teachers tellin me i not been listenin'</p>
-                            <p>when all this time i was wallowin in my</p>
-                        </LyricsCard>
-                        <div className={"lyrics__pretentious4"}>
-                            <div>LIFE WITH NO MEANING AND A HEART THAT TURNED BLACK</div>
-                            <div>I WAS ONLY THIRTEEN WHEN I WAS CUTTING MY HANDS</div>
-                            <div>WHY U PACK UR BAGS N LEAVIN' LIKE U PAKIS HAVE NO SECRETS</div>
-                            <div>SHOUTING "YOU ARE POSSESSED" WHEN I TURNED OUT THE BEST</div>
-                        </div>
-                        <div className={"lyrics__pretentious5"}>
-                            <div>I WENT UP NORTH BABY, I BROUGHT BACK 2 DEGREES</div>
-                            <div>180 DEGREES, SO MY GRANDMA CAN SEE</div>
-                        </div>
-                        <LyricsCard>
-                            <p>THAT WE CAN PAINT A FUTURE FROM A PAST THAT WAS HAUNTED</p>
-                            <p>AND GIVE 1 MORE REASON FROM THEM WHITES TO BE DAUNTED</p>
-                            <p>SMARTER THAN SARTRE BUT THICKER THAN FOUCAULT</p>
-                            <p>HOW ARE PPL SO FUCKIN BASIC I WILL NEVER KNOW</p>
-                            <p>SPEAKIN' THE NIETZSCHE, I'M A GEN Z PREACHER</p>
-                        </LyricsCard>
-                        <LyricsCard>
-                            <p>WHILE THESE BOOMERS BEEN BOOMIN WHAT BEEN BOOMIN THESE SPEAKERS?</p>
-                            <p>DAMN</p>
-                            <p>(and here's one they might remember...)</p>
-                        </LyricsCard>
-                        <LyricsCard>
-                            <p>i do it with my eyes closed slowly another burden in my heart writing make the wifey COSY i am such a piece of art man u think u fuckin know me???/me ohmy you don' tknow shit and this my<span style={{fontSize: 24}}>E EXISTENTIAL CRISIS</span></p>
-                        </LyricsCard>
-                    </LyricsGrid>
-                </TrackSection>
+              <ResponsiveStackChild className={styles.ytembed}>
+                <YouTubeEmbed ytid={'ShLao7Foj7Q'} showControls={false} layout='full' />
               </ResponsiveStackChild>
 
-              <ResponsiveStackChild>
-                <YouTubeEmbed ytid={'ShLao7Foj7Q'} showControls={false} height={854} width={480} />
-              </ResponsiveStackChild>
-
-              <ResponsiveStackChild>
-                <img style={{height: '100%', width: '300%'}} src="https://via.placeholder.com/3840x2160/09f/fff" />
+              <ResponsiveStackChild className={styles.ytembed}>
+                <YouTubeEmbed ytid={'ShLao7Foj7Q'} showControls={false} layout='full' />
               </ResponsiveStackChild>
               
           </ResponsiveStack>
