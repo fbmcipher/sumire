@@ -33,11 +33,6 @@ const App = ({ Component, pageProps }) => {
   /** begin mock data */
   const members = [
     {
-        name: 'faiz',
-        imageSrc: '/artists/faiz/pic.jpg',
-        username: 'faiz'
-    },
-    {
         name: 'HAIDER SAMSARA',
         imageSrc: '/artists/haidersamsara/pic.jpg',
         backgroundSrc: '/artists/haidersamsara/bg.jpg',
@@ -62,6 +57,11 @@ const App = ({ Component, pageProps }) => {
         name: 'HAM',
         imageSrc: '/artists/ham/pic.jpg',
         username: 'ham'
+    },
+    {
+      name: 'faiz',
+      imageSrc: '/artists/faiz/pic.jpg',
+      username: 'faiz'
     }
   ]
   const helpers = {
