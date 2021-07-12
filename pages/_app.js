@@ -36,32 +36,88 @@ const App = ({ Component, pageProps }) => {
         name: 'HAIDER SAMSARA',
         imageSrc: '/artists/haidersamsara/pic.jpg',
         backgroundSrc: '/artists/haidersamsara/bg.jpg',
-        username: 'haidersamsara'
+        username: 'haidersamsara',
+        bio: `HAIDER SAMSARA is a musician, visual artist, filmmaker, and a bunch of other words that don't really represent what he does and just seek to label oneself instead of actually speaking for the work he makes. He prefers the art to speak for himself, so here it is.
+        
+        Also, he is the Editor-in-Chief and Director of [COSY](https://www.cosy.land), a multimedia magazine, and finds that a much more interesting, fulfilling pastime than plugging art.`,
+        links: [
+          {
+            icon: 'Instagram',
+            title: 'Instagram',
+            href: 'javascript:alert("stubbed")'
+          },
+          {
+            icon: 'Twitter',
+            title: 'Twitter',
+            href: 'javascript:alert("stubbed")'
+          }
+        ]
     },
     {
         name: 'Caracara',
         imageSrc: '/artists/caracara/pic.jpg',
         username: 'caracara',
+        bio: `Caracara (Samuel Hart) is a musician and filmmaker. His music is ambient and textural in nature, and always carries a heavy emotional weight. In his first release, he created soundscapes that were nostalgic, extroverted and reminiscient in sound - in his new project, the opposite - cold, dark, and singular. It's a testament to his talents and intuition in music production and audio engineering that he's able to convey such a wide palette of emotion in whatever he creates.`,
+        links: [
+          {
+            icon: 'Instagram',
+            title: 'Instagram',
+            href: 'javascript:alert("stubbed")'
+          },
+          {
+            icon: 'Twitter',
+            title: 'Twitter',
+            href: 'javascript:alert("stubbed")'
+          }
+        ]
     },
     {
         name: 'pier_ogii',
         imageSrc: '/artists/pier_ogii/pic.jpg',
-        username: 'pier_ogii'
+        username: 'pier_ogii',
+        bio: `pier_ogii (Martyna) is the founder and chief aesthetic designer of [COSY](https://www.cosy.land)! She draws every single asset and infographic for COSY, creating its irresistible, iconic and universal design, and talks to writers all around the world every day to keep the cogs of COSY as a publication spinning! She also works with the rest of the COSY team in developing ideas for new features!`,
+        links: [
+          {
+            icon: 'Instagram',
+            title: 'Instagram',
+            href: 'javascript:alert("stubbed")'
+          },
+          {
+            icon: 'Twitter',
+            title: 'Twitter',
+            href: 'javascript:alert("stubbed")'
+          }
+        ]
     },
     {
         name: 'pjd.',
         imageSrc: '/artists/pjd/pic.jpg',
-        username: 'pjd'
+        username: 'pjd',
+        disabled: true
     },
     {
         name: 'HAM',
         imageSrc: '/artists/ham/pic.jpg',
-        username: 'ham'
+        username: 'ham',
+        disabled: true
     },
     {
-      name: 'faiz',
-      imageSrc: '/artists/faiz/pic.jpg',
-      username: 'faiz'
+        name: 'faiz',
+        imageSrc: '/artists/faiz/pic.jpg',
+        username: 'faiz',
+        bio: `i made this site, i guess. i also do technical direction for [COSY](https://www.cosy.land), and code the thing. and whatever other tech jobs there are for me to do.`,
+        links: [
+          {
+            icon: 'Instagram',
+            title: 'Instagram',
+            href: 'javascript:alert("stubbed")'
+          },
+          {
+            icon: 'Twitter',
+            title: 'Twitter',
+            href: 'javascript:alert("stubbed")'
+          }
+        ]
     }
   ]
   const helpers = {
