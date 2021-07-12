@@ -13,7 +13,7 @@ const MemberBioCard = ({member}) => {
     return (
         <div className={styles.memberBioCard}>
             
-            <div>
+            <div className={styles.content}>
                 <div className={styles.memberPic} style={{
                     backgroundImage: `url(${member.imageSrc})`
                 }}>
