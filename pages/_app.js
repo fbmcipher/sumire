@@ -105,19 +105,7 @@ const App = ({ Component, pageProps }) => {
         name: 'faiz',
         imageSrc: '/artists/faiz/pic.jpg',
         username: 'faiz',
-        bio: `i made this site, i guess. i also do technical direction for [COSY](https://www.cosy.land), and code the thing. and whatever other tech jobs there are for me to do.`,
-        links: [
-          {
-            icon: 'Instagram',
-            title: 'Instagram',
-            href: 'javascript:alert("stubbed")'
-          },
-          {
-            icon: 'Twitter',
-            title: 'Twitter',
-            href: 'javascript:alert("stubbed")'
-          }
-        ]
+        disabled: true
     }
   ]
   const helpers = {

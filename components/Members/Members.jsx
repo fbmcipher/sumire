@@ -22,11 +22,15 @@ const MembersContent = ({members, active})=>{
 }
 
 const Member = ({member, isActive}) => {
+    
+    /* don't do anything when clicked if disabled. otherwise, go to artist page when clicked. */
+    let href = member.disabled ? '#' : `/@${member.username}`;
+
     return (
-        <Link href={`/@${member.username}`}>
-            <div className={`${styles.member} ${isActive ? styles.active : null}`}>
+        <Link href={href}>
+            <div className={`${styles.member} ${isActive ? styles.active : null} ${member.disabled ? styles.disabled : null}`}>
                 <div className={styles.memberImageContainer}>
-                    <Image src={member.imageSrc} width={64} height={64} className={styles.memberImage} />
+                    <Image src={member.imageSrc} width={64} height={64} className={styles.memberImage} disabled={member.disabled} />
                 </div>
                 <div className={styles.memberName}>{member.name}</div>
             </div>
