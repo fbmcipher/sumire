@@ -165,3 +165,40 @@ nav.links ol li:hover {
 nav.links ol li.active:hover {
     border-bottom: 3px solid #ff9ed8;
 }
+
+
+@media (max-width: 500px){
+    .topbarSectionLeft .links {
+        margin: 0;
+    }
+
+    .socialLink {
+        margin: 0 4px;
+    }
+
+    .typemark {
+        font-size: 32px;
+        margin-bottom: 4px;
+    }
+
+    .links ol li {
+        font-size: 20px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .typemark {
+        font-size: 30px;
+    }
+
+    .socialLink > div {
+        height: 24px;
+        width: 24px;
+    }
+}
+
+@media (max-width: 350px){
+    .typemark {
+        font-size: 25px;
+    }
+}

@@ -46,7 +46,7 @@ const SocialLink = ({name, href})=> {
     console.log(socialLinkSrc);
     return (
         <a className={styles.socialLink} href={href} aria-label={name}>
-            <Image src={socialLinkSrc} focusable="false" width="24" height="24" />
+            <Image src={socialLinkSrc} className={styles.socialLinkImg} focusable="false" width="24" height="24" />
         </a>
     )
 }
