@@ -5,12 +5,29 @@
 
 /* Intro section */
 section.intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     width: 50vw;
+}
+
+section.intro h2 {
+    margin: 16px 0;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+section.intro h1 {
+    margin: 8px 0 0 0;
+    font-size: 32px;
+    font-weight: 600;
+    font-style: oblique;
 }
 
 /* Break section */
 section.break {
-    width: 50vw;
+    width: 128px;
     background-color: #f08000;
     margin: 0;
 }
@@ -26,6 +43,9 @@ section.pics img {
     height: 100vh;
     object-fit: cover;
 }
+
+.applePic  { object-position: center 38% }
+.lemonsPic { object-position: center 40% }
 
 /* Products section */
 section.products {
@@ -123,9 +143,11 @@ button.addToCart {
 }
 
 /* Mobile styles */
-@media(max-width: 1000px) and (orientation: portrait) {
+@media(max-width: 1000px) {
     section.pics {
         width: unset;
+        display: flex;
+        flex-direction: column;
     }
 
     section.pics img {
@@ -152,5 +174,32 @@ button.addToCart {
     section.products {
         display: flex;
         flex-direction: column;
+    }
+
+    section.intro {
+        width: 100vw;
+        margin: 32px 0;
+    }
+
+    section.break {
+        height: 128px;
+    }
+    
+    .shipping,
+    .productContentTop,
+    .light,
+    .light .shipping {
+        text-shadow: 0px 1px 6px rgba(0,0,0,.5);
+        color: rgba(255,255,255);
+    }
+}
+
+@media (max-width: 400px){
+    section.intro h1 {
+        font-size: 28px;
+    }
+
+    section.intro h2 {
+        font-size: 20px;
     }
 }

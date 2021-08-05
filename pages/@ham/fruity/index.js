@@ -11,7 +11,6 @@ import classNames from 'classnames';
 /* components */
 import Exhibit from '../../../components/Exhibit/Exhibit.jsx';
 import { ResponsiveStack, ResponsiveStackChild } from '../../../components/ResponsiveStack/ResponsiveStack.jsx';
-import ImageHotspots from 'react-image-hotspots';
 
 /* styles */
 import styles from './index.module.css';
@@ -150,15 +149,16 @@ export default function Fruity() {
             {/* Intro section */}
             <ResponsiveStackChild className={styles.intro}>
               <img src="/exhibits/ham/ham.png" height="256" width="256" />
-              <h1>the fruity collection</h1>
+              <h2>presents...</h2>
+              <h1>"the fruity collection"</h1>
             </ResponsiveStackChild>
 
             {/* Models section */}
             <ResponsiveStackChild className={styles.pics}>
-                <img src="/exhibits/ham/salad.jpg" />
-                <img src="/exhibits/ham/apple.jpg" />
-                <img src="/exhibits/ham/lemons.jpg" />
-                <img src="/exhibits/ham/joos.jpg" />
+                <img src="/exhibits/ham/salad.jpg"  className={styles.saladPic}  />
+                <img src="/exhibits/ham/apple.jpg"  className={styles.applePic}  />
+                <img src="/exhibits/ham/lemons.jpg" className={styles.lemonsPic} />
+                <img src="/exhibits/ham/joos.jpg"   className={styles.joosPic}   />
             </ResponsiveStackChild>
 
             {/* Break section */}
