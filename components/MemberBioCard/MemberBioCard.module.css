@@ -1,6 +1,6 @@
 .memberPic {
-    height: 128px;
-    width: 128px;
+    height: 100px;
+    width: 100px;
     border-radius: 100%;
     background-size: cover;
     background-position: center center;
@@ -21,14 +21,14 @@
 }
 
 .memberName {
-    font: 700 36px Wavehaus;
+    font: 700 24px Wavehaus;
     margin-bottom: 6px;
 }
 
 .memberBio {
     max-width: 100%;
     white-space: normal;
-    font: 500 22px "GT Walsheim";
+    font: 500 18px "GT Walsheim";
     opacity: .9;
     line-height: 1.5em;
     margin-bottom: 24px;
@@ -46,19 +46,22 @@
 }
 
 .memberLink svg {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-right: 8px;
 }
 
 .memberLinkUsername {
-    font-size: 20px;
+    font-size: 18px;
     opacity: .8;
-    text-decoration: underline;
+    text-decoration: none;
+    padding-bottom: 3px;
+    border-bottom: 2px solid lightgrey;
     transition: 0.15s linear;
 }
 
 .memberLinkUsername:hover {
     opacity: 1;
+    border-bottom: 2px solid white;
 }
 
 @media (max-width: 1000px){

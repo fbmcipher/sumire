@@ -32,8 +32,8 @@ const ExhibitCard = ({exhibit, focussed}) => {
     console.log(exhibit.slug);
 
     // link is made up of exhibit's primary Artists and the slug.
-    let link = `/@${exhibit.artists[0].username}/${exhibit.slug}`
-
+    // or 'href' property in exhibit.
+    let link = exhibit.href ? exhibit.href : `/@${exhibit.artists[0].username}/${exhibit.slug}`
     /*
         To make the ExhibitCard always a square:
             -> In horizontal scrolling mode, we set height to dynamically fill the container's height.
@@ -76,7 +76,7 @@ const ExhibitCard = ({exhibit, focussed}) => {
                                 className={styles.exhibit_artists}
                                 artists={exhibit.artists}
                             /></em>
-                            <span> in november 2020</span>
+                            <span> in {exhibit.released}</span>
                         </div>
                         <div className={styles.exhibit_type}>
                             {exhibit.type}

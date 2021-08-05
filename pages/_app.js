@@ -37,7 +37,7 @@ const App = ({ Component, pageProps }) => {
         imageSrc: '/artists/haidersamsara/pic.jpg',
         backgroundSrc: '/artists/haidersamsara/bg.jpg',
         username: 'haidersamsara',
-        bio: `is a musician, visual artist, filmmaker, and a bunch of other words that don't really represent what he does and just seek to label oneself instead of actually speaking for the work he makes. He prefers the art to speak for himself, so here it is.
+        bio: `is a musician, visual artist, filmmaker, and a bunch more words that don't really represent what he does and just seek to label oneself instead of actually speaking for the work he makes. He prefers the art to speak for himself, so here it is.
         
 He is also the Editor-in-Chief and Director of [COSY](https://www.cosy.land), a multimedia magazine, and finds that a much more interesting, fulfilling pastime than plugging art.`,
         links: [
@@ -57,19 +57,22 @@ He is also the Editor-in-Chief and Director of [COSY](https://www.cosy.land), a 
     },
     {
         name: 'Caracara',
-        name_full: 'Caracara (Samuel Hart)',
+        name_full: 'Caracara (Samuel)',
         imageSrc: '/artists/caracara/pic.jpg',
+        backgroundSrc: '/artists/caracara/bg.jpg',
         username: 'caracara',
         bio: `is a musician and filmmaker. His music is ambient and textural in nature, and always carries a heavy emotional weight. In his first release, he created soundscapes that were nostalgic, extroverted and reminiscient in sound - in his new project, the opposite - cold, dark, and singular. It's a testament to his talents and intuition in music production and audio engineering that he's able to convey such a wide palette of emotion in whatever he creates.`,
         links: [
           {
             icon: 'Instagram',
             title: 'Instagram',
+            username: '@username',
             href: 'javascript:alert("stubbed")'
           },
           {
             icon: 'Twitter',
             title: 'Twitter',
+            username: '@username',
             href: 'javascript:alert("stubbed")'
           }
         ]
@@ -78,17 +81,20 @@ He is also the Editor-in-Chief and Director of [COSY](https://www.cosy.land), a 
         name: 'pier_ogii',
         name_full: 'pier_ogii (Martyna)',
         imageSrc: '/artists/pier_ogii/pic.jpg',
+        backgroundSrc: '/artists/pier_ogii/bg.jpg',
         username: 'pier_ogii',
-        bio: `is the founder and chief aesthetic designer of [COSY](https://www.cosy.land)! She draws every single asset and infographic for COSY, creating its irresistible, iconic and universal design, and talks to writers all around the world every day to keep the cogs of COSY as a publication spinning! She also works with the rest of the COSY team in developing ideas for new features!`,
+        bio: `is the founder and chief aesthetic designer of [COSY](https://www.cosy.land)! She draws every single asset and infographic for COSY, creating its irresistible, iconic and universal design, and talks to writers all around the world every day to keep the cogs of COSY as a publication spinning. She also works with the rest of the COSY team in developing ideas for new features!`,
         links: [
           {
             icon: 'Instagram',
             title: 'Instagram',
+            username: '@username',
             href: 'javascript:alert("stubbed")'
           },
           {
             icon: 'Twitter',
             title: 'Twitter',
+            username: '@username',
             href: 'javascript:alert("stubbed")'
           }
         ]
@@ -125,33 +131,57 @@ He is also the Editor-in-Chief and Director of [COSY](https://www.cosy.land), a 
       }
   }
   const exhibits = [
-      {
+    
+    {
       title: "HAIDERNISM",
       slug: 'haidernism', /* slug = URL-safe identifier */
       artists: [
           helpers.getArtistByUsername('haidersamsara')
       ],
       imageSrc: '/exhibits/haidernism.png',
+      released: 'november 2020',
+      sort: 2,
       type: 'album'
-      },
-      {
+    },
+    
+    {
       title: "There Is A Beautiful Nothing",
       slug: 'thereisabeautifulnothing',
       artists: [
           helpers.getArtistByUsername('caracara')
       ],
+      released: 'january 2021',
+      sort: 4,
       imageSrc: '/exhibits/thereisabeautifulnothing.jpg',
       type: 'album'
-      },
-      {
+    },
+    
+    {
       title: "the fruity collection",
       slug: 'fruity', /* slug = URL-safe identifier */
       artists: [
           helpers.getArtistByUsername('ham')
       ],
       imageSrc: '/exhibits/ham/fruity.png',
+      released: 'september 2020',
+      sort: 1,
       type: 'fashion collection'
-      },
+    },
+  
+    {
+      title: "COSY.LAND",
+      slug: "cosyland",
+      artists: [
+        helpers.getArtistByUsername('pier_ogii'),
+        helpers.getArtistByUsername('haidersamsara'),
+        helpers.getArtistByUsername('faiz')
+      ],
+      imageSrc: '/exhibits/cosy.land/welcome.gif',
+      href: 'https://cosy.land/?ref=madebysumire',
+      released: 'december 2020',
+      sort: 3,
+      type: 'online magazine'
+    }
   ]
   const data = {members, exhibits, helpers};
   /** end mock data */

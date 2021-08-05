@@ -26,6 +26,12 @@
     }
 }
 
+
+.exhibit_card:global(#cosyland) .exhibit_background {
+    object-fit: contain;
+    background-color: black;
+}
+
 .exhibit_info {
     position: absolute;
     top: 0;
