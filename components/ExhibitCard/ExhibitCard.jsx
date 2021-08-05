@@ -34,6 +34,24 @@ const ExhibitCard = ({exhibit, focussed}) => {
     // link is made up of exhibit's primary Artists and the slug.
     // or 'href' property in exhibit.
     let link = exhibit.href ? exhibit.href : `/@${exhibit.artists[0].username}/${exhibit.slug}`
+    console.log(link);
+
+    /* next.js' Link component does not support target='_blank', which we need
+    to open external links in new tabs. So this component allows us to switch
+    between using a/Link using props. */
+    const LinkComponent = ({href, target, children}) => {
+        if(target == "_blank"){
+           return children; // we'll do it in onclick instead of wrapping in link.
+        } else {
+            return (
+                <Link href={href}>
+                    {children}
+                </Link>
+            )
+        }
+    }
+
+
     /*
         To make the ExhibitCard always a square:
             -> In horizontal scrolling mode, we set height to dynamically fill the container's height.
@@ -53,12 +71,15 @@ const ExhibitCard = ({exhibit, focussed}) => {
     
 
     return (
-        <Link href={link}>
+        <LinkComponent href={link} target={exhibit.href ? "_blank" : null}>
             <div
             ref={ref}
             className={styles.exhibit_card}
             style={squareProps}
             id={exhibit.slug}
+            onClick={exhibit.href ? () => {
+                window.open(exhibit.href, '_blank')
+            } : null}
         >
             <Image className={styles.exhibit_background} src={exhibit.imageSrc} layout="fill" />   
             {/* Vignette makes text more readable on light bgs */}
@@ -85,7 +106,7 @@ const ExhibitCard = ({exhibit, focussed}) => {
                 </div>
             </div>
         </div>
-        </Link>
+        </LinkComponent>
     )
 }
 

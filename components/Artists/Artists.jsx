@@ -19,11 +19,13 @@ const Artists = ({artists}) => {
        this iterates every element in the array.
        if it's not the last one, add a span containing a ,
     */
+   
+    let c = 1;
     let length = components.length;     /* components length will keep growing as we add commas,
                                            so stash its length right now here. */
     for (let i = 0; i < length; i++){
         if(i != (length - 1)){
-            components.splice(i+1, 0, <span>, </span>)
+            components.splice(i+c++, 0, <span>, </span>)
         }
     }
 
