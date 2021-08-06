@@ -72,14 +72,21 @@ const AudioHandler = props => {
     const nextTrack = () => {
         if(playingIdx + 1 in queue){
             setPlayingIdx(playingIdx + 1);
-        } else {
-            setVisible(false);
         }
     }
 
     const prevTrack = () => {
-        if(playingIdx - 1 in queue){
+        /* If audio playback is gtr than 5s, or there is nothing before this item in 
+           the queue, skip to the start of the song. Else, skip to the last song. */
+
+        let time = audioTag?.current?.currentTime || 0;
+
+        if(time < 5 && playingIdx - 1 in queue){
+            console.log('AudioHandler: Go to last track.');
             setPlayingIdx(playingIdx - 1);
+        } else {
+            console.log("AudioHandler: Starting track from the top.");
+            audioTag.current.currentTime = 0;
         }
     }
 
