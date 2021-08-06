@@ -85,7 +85,7 @@ const Product = ({product, light}) => {
       </div>
 
     </div>
-    <Image layout="fill" src={product.imgSrc} />
+    <Image layout="fill" loading={"eager"} src={product.imgSrc} />
   </ResponsiveStackChild>
 }
 

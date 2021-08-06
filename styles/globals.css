@@ -45,3 +45,17 @@ button {
 .flex-col {
   flex-direction: column;
 }
+
+/********* HAM overrides */
+/* this code is a mess. THIS is why css in js is a bad idea. */
+
+.exhibit-fruity .responsiveStack {
+    overflow-y: hidden;
+}
+
+@media (max-width: 1000px) {
+  .exhibit-fruity .responsiveStack {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}
