@@ -77,7 +77,9 @@ const TrackControls = ({audioTag, prevTrack, nextTrack }) => {
 
         audioTag.current.addEventListener('play', (e)=>{
             forceUpdate();
-        })
+        });
+
+        setDidSetPauseEventListener(true);
     }
 
     const playPause = ()=>{
