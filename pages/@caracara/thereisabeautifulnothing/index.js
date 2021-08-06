@@ -29,9 +29,10 @@ export default function TIABN() {
                   "username": "caracara"
               }
           ],
-          "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/tiabn/track1.mp3",
+          "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/tiabn/01 Caracara - Drifting.mp3",
           "id": "tiabn_track1",
-          "runtime": 123
+          "runtime": 123,
+          "imageSrc": "/exhibits/thereisabeautifulnothing.jpg"
       },
       {
         "title": "The View from My Room",
@@ -41,9 +42,10 @@ export default function TIABN() {
                 "username": "caracara"
             }
         ],
-        "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/tiabn/track2.mp3",
+        "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/tiabn/02 Caracara - The View From My Room.mp3",
         "id": "tiabn_track2",
-        "runtime": 123
+        "runtime": 123,
+        "imageSrc": "/exhibits/thereisabeautifulnothing.jpg"
     },
     {
         "title": "Post-Nausea",
@@ -53,9 +55,10 @@ export default function TIABN() {
                 "username": "caracara"
             }
         ],
-        "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/tiabn/track3.mp3",
+        "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/tiabn/03 Caracara - Post Nausea.mp3",
         "id": "tiabn_track3",
-        "runtime": 123
+        "runtime": 123,
+        "imageSrc": "/exhibits/thereisabeautifulnothing.jpg"
     },
     
     {
@@ -66,9 +69,10 @@ export default function TIABN() {
                 "username": "caracara"
             }
         ],
-        "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/tiabn/track4.mp3",
+        "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/tiabn/04 Caracara - Sleeplessness.mp3",
         "id": "tiabn_track4",
-        "runtime": 123
+        "runtime": 123,
+        "imageSrc": "/exhibits/thereisabeautifulnothing.jpg"
     },
     
     {
@@ -79,9 +83,10 @@ export default function TIABN() {
                 "username": "caracara"
             }
         ],
-        "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/tiabn/track5.mp3",
+        "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/tiabn/05 Caracara - Once, Norway.mp3",
         "id": "tiabn_track5",
-        "runtime": 123
+        "runtime": 123,
+        "imageSrc": "/exhibits/thereisabeautifulnothing.jpg"
     },
     
     {
@@ -92,9 +97,10 @@ export default function TIABN() {
                 "username": "caracara"
             }
         ],
-        "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/tiabn/track6.mp3",
+        "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/tiabn/06 Caracara - Destroyer.mp3",
         "id": "tiabn_track6",
-        "runtime": 123
+        "runtime": 123,
+        "imageSrc": "/exhibits/thereisabeautifulnothing.jpg"
     },
     
     {
@@ -105,9 +111,10 @@ export default function TIABN() {
                 "username": "caracara"
             }
         ],
-        "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/tiabn/track7.mp3",
+        "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/tiabn/07 Caracara - The House Through Photographs.mp3",
         "id": "tiabn_track7",
-        "runtime": 123
+        "runtime": 123,
+        "imageSrc": "/exhibits/thereisabeautifulnothing.jpg"
     },
     
     {
@@ -118,9 +125,10 @@ export default function TIABN() {
                 "username": "caracara"
             }
         ],
-        "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/tiabn/track8.mp3",
+        "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/tiabn/08 Caracara - Truly Alone.mp3",
         "id": "tiabn_track8",
-        "runtime": 123
+        "runtime": 123,
+        "imageSrc": "/exhibits/thereisabeautifulnothing.jpg"
     },
     
     {
@@ -131,9 +139,10 @@ export default function TIABN() {
                 "username": "caracara"
             }
         ],
-        "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/tiabn/track9.mp3",
+        "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/tiabn/09 Caracara - You Won't Always Be Around.mp3",
         "id": "tiabn_track9",
-        "runtime": 123
+        "runtime": 123,
+        "imageSrc": "/exhibits/thereisabeautifulnothing.jpg"
     },
     
     {
@@ -144,9 +153,10 @@ export default function TIABN() {
                 "username": "caracara"
             }
         ],
-        "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/tiabn/track10.mp3",
+        "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/tiabn/10 Caracara - Blue Light (Here).mp3",
         "id": "tiabn_track10",
-        "runtime": 123
+        "runtime": 123,
+        "imageSrc": "/exhibits/thereisabeautifulnothing.jpg"
     },
     
     {
@@ -157,9 +167,10 @@ export default function TIABN() {
                 "username": "caracara"
             }
         ],
-        "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/tiabn/track11.mp3",
+        "src": "https://sumire.s3.eu-west-2.amazonaws.com/audio/tiabn/10 Caracara - Blue Light (Here).mp3",
         "id": "tiabn_track11",
-        "runtime": 123
+        "runtime": 123,
+        "imageSrc": "/exhibits/thereisabeautifulnothing.jpg"
     },
       
   ].map(

@@ -6,6 +6,15 @@
     background-position: center center;
 }
 
+.banner {
+    pointer-events: none;
+}
+
+.logotype,
+.logotype img {
+    pointer-events: none;
+}
+
 @media (max-width: 1000px){
     .banner {
         width: 100vw;

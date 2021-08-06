@@ -35,6 +35,7 @@ const AudioHandler = props => {
 
     /* Helper functions */
     const playAudioFile = async (src) => {
+        console.log('AudioHandler: playAudioFile('+src+')')
         /* Stop current audio playback (if any) */
         await audioTag.current.pause();
 
@@ -52,6 +53,15 @@ const AudioHandler = props => {
         /* Append it to audioTag */
         audioTag.current.appendChild(newSource);
 
+        /* Register events */
+        audioTag.current.addEventListener('ended', (event) => {
+            /* Playback has ended!
+               We should increment playingIdx by 1, if there is more left in the queue.
+               If there isn't, just close the player. */
+            
+            nextTrack()
+        })
+
         /* Load the new audio... */
         await audioTag.current.load();
 
@@ -59,10 +69,25 @@ const AudioHandler = props => {
         await audioTag.current.play();
     }
 
+    const nextTrack = () => {
+        if(playingIdx + 1 in queue){
+            setPlayingIdx(playingIdx + 1);
+        } else {
+            setVisible(false);
+        }
+    }
+
+    const prevTrack = () => {
+        if(playingIdx - 1 in queue){
+            setPlayingIdx(playingIdx - 1);
+        }
+    }
+
     /* This code runs if the currently playing index changes (if track finished,
         skipped, etc.) or if the queue changed (new album is being played, new
         track, etc.) */
     useEffect(()=>{
+        console.log('AudioHandler: track needs to change...')
         setVisible(true);
         if(playingIdx in queue){
             setCurTrack(queue[playingIdx]);
@@ -78,7 +103,7 @@ const AudioHandler = props => {
     return (
         <AudioContext.Provider value={{
             queue, setQueue, playingIdx, setPlayingIdx, curTrack, setCurTrack,
-            audioTag, visible, setVisible
+            audioTag, visible, setVisible, nextTrack, prevTrack
         }}>
             <NowPlayingMini />
             <NowPlaying />

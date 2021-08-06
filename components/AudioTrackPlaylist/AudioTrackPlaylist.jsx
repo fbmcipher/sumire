@@ -3,9 +3,11 @@
 import styles from './AudioTrackPlaylist.module.css';
 import AudioContext from '../../contexts/AudioContext.jsx';
 import { useEffect, useContext } from 'react';
+import classNames from 'classnames';
 
 const AudioTrackPlaylist = ({tracks, styles}) => {
-    let { player } = useContext(AudioContext);
+    let { curTrack, player } = useContext(AudioContext);
+
     return <div className={`${styles.playlist}`}>
         <ol>
             { tracks.map((track, index) => {
@@ -18,28 +20,28 @@ const AudioTrackPlaylist = ({tracks, styles}) => {
                     key={index}
                     tracks={tracks}
                     track={track}
-                    number={index + 1} />
-
+                    number={index + 1}
+                    active={curTrack?.id == track.id} />
             }) }
         </ol>
     </div>
 
 }
 
-const Track = ({track, number, tracks}) => {
-    const { setQueue, setPlayingIdx } = useContext(AudioContext);
+const Track = ({track, number, tracks, active}) => {
+    const { playingIdx, curTrack, setQueue, setPlayingIdx } = useContext(AudioContext);
 
     const onClick = (e)=>{
         /* If this track is already playing, pause playback.
            If this track is not already playing, change playback to this track. */
         setQueue(tracks);
-        setPlayingIdx(tracks.indexOf(track))
+        setPlayingIdx(tracks.indexOf(track));
     }
 
     return (
-        <li onClick={onClick} className={styles.track}>
+        <li onClick={onClick} className={classNames(styles.track, active ? 'active' : 'inactive')}>
             <div className={styles.trackText}>
-                <div className={styles.trackNumber}>{number}</div>
+                <div className={styles.trackNumber}>{active ? '▶' : number}</div>
                 <div className={styles.trackTitle}>{track.title}</div>
             </div>
             <div className={styles.trackInfo}>

@@ -16,7 +16,7 @@ const NowPlaying = ({playing}) => {
 
     return (
         <AudioContext.Consumer>
-            { ({curTrack, audioTag, visible, setVisible }) => {
+            { ({curTrack, audioTag, visible, setVisible, nextTrack, prevTrack }) => {
                 /* Instead of passing thru track duration as a prop to progress,
                    I will manipulate the element directly using the traditional
                    DOM methods to avoid crazy number of unnecessary renders. */
@@ -52,7 +52,7 @@ const NowPlaying = ({playing}) => {
                                     <SeekBar audioTag={audioTag} />
                                 </div>
                                 <div className={styles.trackControls}>
-                                    <TrackControls audioTag={audioTag} />
+                                    <TrackControls audioTag={audioTag} prevTrack={prevTrack} nextTrack={nextTrack} />
                                 </div>
                             </>
                             ): null}
@@ -64,7 +64,7 @@ const NowPlaying = ({playing}) => {
     )
 }
 
-const TrackControls = ({audioTag}) => {
+const TrackControls = ({audioTag, prevTrack, nextTrack }) => {
     /* Renders track controls for the passed <audio> tag.
        This means - rewind, play/pause, fast forward. */
     const forceUpdate = useForceUpdate();
@@ -90,7 +90,7 @@ const TrackControls = ({audioTag}) => {
         <div className={styles.trackControls}>
 
             <div className={classNames(styles.trackControl, styles.fastRewind)}>
-                <FastRewind />
+                <FastRewind onClick={ prevTrack } />
             </div>
 
             <div onClick={playPause} className={classNames(styles.trackControl, styles.playPause)}>
@@ -98,7 +98,7 @@ const TrackControls = ({audioTag}) => {
             </div>
 
             <div className={classNames(styles.trackControl, styles.fastForward)}>
-                <FastForward />
+                <FastForward onClick={ nextTrack } />
             </div>
 
         </div>
@@ -123,6 +123,7 @@ const SeekBar = ({audioTag}) => {
     }
 
     if(audioTag.current && seekBar.current && !didSetAudioTagListener){
+        seekBar.current.value = 0;
         audioTag.current.addEventListener('timeupdate', (e)=>{
             /* keeps the slider synched with current playback completion */
             /* playback percentage */

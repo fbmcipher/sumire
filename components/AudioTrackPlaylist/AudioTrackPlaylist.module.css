@@ -34,6 +34,10 @@ svg.explicit {
     justify-content: space-between;
 }
 
+.track:global(.active) .trackTitle {
+    font-weight: 600;
+}
+
 .trackTitle:hover {
     text-decoration: underline;
     cursor: pointer;

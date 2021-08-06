@@ -39,7 +39,7 @@ const App = ({ Component, pageProps }) => {
         username: 'haidersamsara',
         bio: `is a musician, visual artist, filmmaker, and a bunch more words that don't really represent what he does and just seek to label oneself instead of actually speaking for the work he makes. He prefers the art to speak for himself, so here it is.
         
-He is also the Editor-in-Chief and Director of [COSY](https://www.cosy.land), a multimedia magazine, and finds that a much more interesting, fulfilling pastime than plugging art.`,
+He is also the Editor-in-Chief and Director of [COSY](https://www.cosy.land), a multimedia magazine he co-started with his partner Martyna, and finds that a much more interesting, fulfilling pastime than plugging art.`,
         links: [
           {
             icon: 'Instagram',
@@ -61,7 +61,7 @@ He is also the Editor-in-Chief and Director of [COSY](https://www.cosy.land), a 
         imageSrc: '/artists/caracara/pic.jpg',
         backgroundSrc: '/artists/caracara/bg.jpg',
         username: 'caracara',
-        bio: `is a musician and filmmaker. His music is ambient and textural in nature, and always carries a heavy emotional weight. In his first release, he created soundscapes that were nostalgic, extroverted and reminiscient in sound - in his new project, the opposite - cold, dark, and singular. It's a testament to his talents and intuition in music production and audio engineering that he's able to convey such a wide palette of emotion in whatever he creates.`,
+        bio: `is a musician and filmmaker. His music is ambient and textural in nature, and always carries heavy emotional weight. In his first release, he created soundscapes that were nostalgic, extroverted and reminiscient in sound. In his new project, the opposite - cold, dark, and insular. It's a testament to his talents and intuition in music production and audio engineering that he's able to convey such a wide palette of emotion in whatever he creates.`,
         links: [
           {
             icon: 'Instagram',
