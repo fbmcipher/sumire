@@ -59,3 +59,40 @@ button {
     overflow-x: hidden;
   }
 }
+
+
+/********** Profile Layout **************/
+.profileBackground img {
+  /* cover, instead of stretch, background image. */
+  object-fit: cover;
+  object-position: center center;
+  animation: animateIn .4s ease-in-out;
+}
+
+.profileBackground.out img {
+  animation: animateOut .4s ease-in-out;
+}
+
+@keyframes animateIn {
+  0% {
+      opacity: 0;
+      transform: scale(0.9);
+  }
+
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+@keyframes animateOut {
+  0% { 
+      opacity: 1;
+      transform: scale(1);
+  }
+
+  100% {
+      opacity: 0;
+      transform: scale(0.9);
+  }
+}

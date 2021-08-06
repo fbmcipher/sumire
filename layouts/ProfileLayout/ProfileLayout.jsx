@@ -21,6 +21,7 @@
 
  import { useRouter } from 'next/router'
 import MemberBioCard from '../../components/MemberBioCard/MemberBioCard';
+import classNames from 'classnames';
 
  const ProfileLayout = ({children}) => {
      return (
@@ -51,7 +52,7 @@ import MemberBioCard from '../../components/MemberBioCard/MemberBioCard';
 
         {member.backgroundSrc
             ?
-            <Background className={styles.profileBackground}>
+            <Background className={classNames(styles.profileBackground, 'profileBackground')}>
                 <Image src={member.backgroundSrc} layout='fill' />
             </Background>
             :
