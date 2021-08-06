@@ -81,7 +81,7 @@ const ExhibitCard = ({exhibit, focussed}) => {
                 window.open(exhibit.href, '_blank')
             } : null}
         >
-            <Image className={styles.exhibit_background} src={exhibit.imageSrc} layout="fill" />   
+            <Image loading={"eager"} className={styles.exhibit_background} src={exhibit.imageSrc} layout="fill" />   
             {/* Vignette makes text more readable on light bgs */}
             {/* Only display if focussed */}
             <div 

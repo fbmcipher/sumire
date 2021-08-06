@@ -10,17 +10,40 @@
     pointer-events: none;
 }
 
+.logotype {
+    filter: brightness(0.8);
+}
+
 .logotype,
 .logotype img {
     pointer-events: none;
 }
 
+@media ( min-width: 1000px ) {
+    .logotype {
+        transform: rotate(-90deg);
+        position: relative;
+        top: 498px;
+        left: 74px;
+    }
+}
+
 @media (max-width: 1000px){
     .banner {
         width: 100vw;
-        height: 260px;
+        height: 250px;
+        top: 0;
+        left: 0;
+        position: absolute;
         background-image: url(img/banner-nologo-h.jpg);
         background-size: contain;
         background-position: center center;
+    }
+
+    .logotype {
+        width: 174px;
+        top: 136px;
+        left: 42px;
+        position: absolute;
     }
 }

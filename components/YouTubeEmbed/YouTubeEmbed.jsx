@@ -1,9 +1,9 @@
 import styles from './YouTubeEmbed.module.css';
 import { useMediaQuery } from 'react-responsive';
-import { useWindowHeight } from '@react-hook/window-size';
+import { useWindowWidth } from '@react-hook/window-size';
 
 const YouTubeEmbed = ({ytid, showControls = true, height, width, layout = false}) => {
-    const windowHeight = useWindowHeight();
+    const windowWidth = useWindowWidth();
 
     if(layout && layout == 'full'){
         /* Fill the entire screen. */
@@ -13,8 +13,11 @@ const YouTubeEmbed = ({ytid, showControls = true, height, width, layout = false}
             width = '100vw';
             height = 'unset';
         } else {
+
+            /* Get the aspect ratio of the display, and multiply it by the height of the window. */
+
             height = '100vh';
-            width = windowHeight + 'px';
+            width = (windowWidth || document.documentElement.clientWidth) + 'px';
         }
     }
 
@@ -24,7 +27,7 @@ const YouTubeEmbed = ({ytid, showControls = true, height, width, layout = false}
             width
         }}>
             <div className={styles.frameContainer}>
-                <iframe width="858" height="483" src={`https://www.youtube.com/embed/${ytid}?controls=0&autoplay=1&loop=1&modsetbranding&showinfo=0&playlist=${ytid}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                <iframe width="858" height="483" src={`https://www.youtube.com/embed/${ytid}?controls=0&autoplay=1&loop=1&modsetbranding&showinfo=0&playlist=${ytid}&mute=1`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             </div>
         </div>
     )

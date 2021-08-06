@@ -188,7 +188,7 @@ export default function TIABN() {
         <div className="container">
             <div className={styles.banner}>
                 <div className={styles.logotype}>
-                    <Image src={'/pages/@caracara/thereisabeautifulnothing/img/logotype.svg'} layout='fill' />
+                    <img src={'/artists/caracara/logotype.svg'} />
                 </div>
             </div>
             <div className="content">
