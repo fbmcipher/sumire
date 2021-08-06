@@ -2,7 +2,7 @@ import styles from './ResponsiveStack.module.css';
 
 const ResponsiveStack = ({children}) => {
     return (
-        <div className={styles.responsiveStack}>
+        <div className={`${styles.responsiveStack} responsiveStack`}>
             {children}
         </div>
     )
@@ -10,7 +10,7 @@ const ResponsiveStack = ({children}) => {
 
 const ResponsiveStackChild = ({children, className}) => {
     return (
-        <section className={`${styles.responsiveStackChild} ${className}`}>
+        <section className={`${styles.responsiveStackChild} responsiveStackChild ${className}`}>
             {children}
         </section>
     )

@@ -20,6 +20,7 @@ import { ResponsiveStack, ResponsiveStackChild } from '../../../components/Respo
 import YouTubeEmbed from '../../../components/YouTubeEmbed/YouTubeEmbed.jsx';
 
 import styles from './index.module.css';
+import classNames from 'classnames';
 
 const RedCard = ({children, className}) => {
     return (
@@ -196,11 +197,11 @@ export default function Home() {
                 <AudioTrackPlaylist styles={Object.assign(playlistStyles, customPlaylistStyles)} tracks={tracks} />
               </ResponsiveStackChild>
 
-              <ResponsiveStackChild className={styles.ytembed}>
+              <ResponsiveStackChild className={classNames(styles.ytembed)}>
                 <YouTubeEmbed ytid={'ShLao7Foj7Q'} showControls={false} layout='full' />
               </ResponsiveStackChild>
 
-              <ResponsiveStackChild>
+              <ResponsiveStackChild className={styles.thirdSection}>
                 <RedCard className={styles.releaseCredits}>
                     <p>RECORDED in SHEFFIELD, NOTTINGHAM, LONDON, and LEEDS.</p>
                     <p>ALL SONGS WRITTEN and PRODUCED by HAIDER SALEEM</p>
@@ -218,11 +219,15 @@ export default function Home() {
               </ResponsiveStackChild>
 
               <ResponsiveStackChild className={styles.ytembed}>
-                <YouTubeEmbed ytid={'ShLao7Foj7Q'} showControls={false} layout='full' />
+                <YouTubeEmbed ytid={'a5_CNIaucEc'} showControls={false} layout='full' />
               </ResponsiveStackChild>
 
               <ResponsiveStackChild className={styles.ytembed}>
-                <YouTubeEmbed ytid={'ShLao7Foj7Q'} showControls={false} layout='full' />
+                <YouTubeEmbed ytid={'eqcTNvGULyQ'} showControls={false} layout='full' />
+              </ResponsiveStackChild>
+
+              <ResponsiveStackChild className={styles.ytembed}>
+                <YouTubeEmbed ytid={'hitPGFOAYew'} showControls={false} layout='full' />
               </ResponsiveStackChild>
               
           </ResponsiveStack>
