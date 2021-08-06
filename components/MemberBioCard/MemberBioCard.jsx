@@ -42,7 +42,7 @@ const MemberLinks = ({member}) => {
                 const Icon = require('@material-ui/icons')[link.icon]
                 
                 return (
-                    <Link href={link.href}>
+                    <Link key={link.href} href={link.href}>
                         <div className={styles.memberLink}>
                             <Icon />
 

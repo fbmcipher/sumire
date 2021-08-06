@@ -2,10 +2,10 @@ import styles from './YouTubeEmbed.module.css';
 import { useMediaQuery } from 'react-responsive';
 
 const YouTubeEmbed = ({ytid, showControls = false, height, width, layout = false}) => {
+    const isVertical = useMediaQuery({query: '(max-width: 1000px)'});
+
     if(layout && layout == 'full'){
         /* Fill the entire screen. */
-        const isVertical = useMediaQuery({query: '(max-width: 1000px)'});
-
         if(isVertical){
             width = '100vw';
             height = 'unset';
