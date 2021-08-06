@@ -27,10 +27,20 @@
     .exhibit-tiabn {
         overflow-y: scroll !important;
     }
-    
+
+    .content {
+        top: 300px;
+        position: absolute;
+    }
+}
+
+@media ( min-width: 1000px ) {
     .content {
         max-width: 85%;
         margin: 0 auto;
-        padding: 286px 0 0 0 !important;
+        padding: 0 0 0 10vw;
+        left: 266px;
+        top: 100px;
+        position: absolute;
     }
 }

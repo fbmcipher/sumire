@@ -26,6 +26,13 @@
         top: 498px;
         left: 74px;
     }
+
+    .banner {
+        top: 0;
+        position: absolute;
+        width: 260px;
+        height: 100vh;
+    }
 }
 
 @media (max-width: 1000px){

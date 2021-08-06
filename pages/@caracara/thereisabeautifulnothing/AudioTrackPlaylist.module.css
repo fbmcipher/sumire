@@ -15,15 +15,15 @@
         width: 100%;
         font-size: 22px;
     }
+}
 
-    .track {
-        margin: 3px 0;
-        display: flex;
-        justify-content: space-between;
-    }
+.track {
+    margin: 3px 0;
+    display: flex;
+    justify-content: space-between;
+}
 
-    .trackText {
-        display: flex;
-        align-items: flex-start;
-    }
+.trackText {
+    display: flex;
+    align-items: flex-start;
 }
