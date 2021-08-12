@@ -1,5 +1,5 @@
 .playlist {
-    display: inline-block;
+    display: inline-flex;
     width: 600px;
     background: rgb(195, 1, 0);
     font-family: "Arial Unicode MS", "Arial", "Helvetica", sans-serif;
@@ -7,6 +7,10 @@
     font-size: 22px;
 }
 
+.track {
+    display: flex;
+    justify-content: space-between;
+}
 @media(max-width: 800px){
     .playlist {
         width: 100%;
